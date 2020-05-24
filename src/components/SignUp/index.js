@@ -4,6 +4,7 @@ import { Link, navigate } from 'gatsby';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
+import FullTitleLogo from '../ImageRendering/full_title'
 
 const INITIAL_STATE = {
   username: '',
@@ -94,7 +95,7 @@ class SignUpFormBase extends Component {
     return (
       <>
         <div>
-          <img className="mx-auto h-12 w-auto" src="/img/logos/workflow-mark-on-white.svg" alt="makeMyGames logo" />
+          <FullTitleLogo />
           <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
             Sign up for an account
             </h2>
@@ -154,7 +155,7 @@ class SignUpFormBase extends Component {
               </span>
                 Sign up
               </button>
-              {error && <p>{error.message}</p>}
+            {error && <p>{error.message}</p>}
           </div>
         </form>
       </>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 import { PasswordForgetLink } from '../PasswordForget';
 import { SignUpLink } from '../SignUp';
+import FullTitleLogo from '../ImageRendering/full_title'
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -57,7 +58,7 @@ class SignInFormBase extends Component {
     return (
       <>
         <div>
-          <img className="mx-auto h-12 w-auto" src="/img/logos/workflow-mark-on-white.svg" alt="makeMyGames logo" />
+          <FullTitleLogo/>
           <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
             Sign in to your account
             </h2>
