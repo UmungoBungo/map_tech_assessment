@@ -58,7 +58,7 @@ class SignInFormBase extends Component {
     return (
       <>
         <div>
-          <FullTitleLogo/>
+          <FullTitleLogo />
           <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
             Sign in to your account
             </h2>
@@ -86,10 +86,8 @@ class SignInFormBase extends Component {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-between">
+          <div className="mt-6 flex items-center">
             <SignUpLink />
-
-            <PasswordForgetLink />
           </div>
 
           <div className="mt-6">
@@ -105,6 +103,9 @@ class SignInFormBase extends Component {
               </span>
                 Sign in
               </button>
+          </div>
+          <div className="mt-6 flex items-center">
+            <PasswordForgetLink />
           </div>
           {error && <p>{error.message}</p>}
         </form>

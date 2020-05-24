@@ -165,7 +165,7 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <div className="flex items-center">
-    <label htmlFor="remember_me" className="ml-2 block text-sm leading-5 text-gray-900">
+    <label className="ml-2 block text-sm leading-5 text-gray-900">
       {"Don't have an account? "}
       <Link to={ROUTES.SIGN_UP}>
         <span className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">

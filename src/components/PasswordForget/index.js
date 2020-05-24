@@ -83,13 +83,15 @@ class PasswordForgetForm extends Component {
 }
 
 const PasswordForgetLink = () => (
-  <span className="text-sm leading-5">
-    <Link to={ROUTES.PASSWORD_FORGET}>
-      <span className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+  <div className="flex items-center">
+    <label className="ml-2 block text-sm leading-5">
+      <Link to={ROUTES.PASSWORD_FORGET}>
+        <span className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
         Forgot your password?
-      </span>
-    </Link>
-  </span>
+        </span>
+      </Link>
+    </label>
+  </div>
 );
 
 export default withFirebase(PasswordForgetForm);
