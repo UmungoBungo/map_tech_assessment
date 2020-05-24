@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react';
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from '../components/layout';
 

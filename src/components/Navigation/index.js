@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
-
+import { Link, useStaticQuery, graphq } from 'gatsby';
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
+import LogoImage from './logo_image'
 
 const Navigation = () => {
   const [mobMenuOpen, setMobMenuOpen] = useState(false);
@@ -55,8 +55,7 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen }) => (
         </div>
         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div className="flex-shrink-0">
-            <img className="block lg:hidden h-8 w-auto" src="/img/logos/workflow-mark-on-dark.svg" alt="Workflow logo" />
-            <img className="hidden lg:block h-8 w-auto" src="/img/logos/workflow-logo-on-dark.svg" alt="Workflow logo" />
+            <LogoImage />
           </div>
           <div className="hidden sm:block sm:ml-6">
             <div className="flex">
@@ -137,10 +136,7 @@ const NavigationNonAuth = ({ toggleMobMenu, mobMenuOpen }) => (
           </button>
         </div>
         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div className="flex-shrink-0">
-            <img className="block lg:hidden h-8 w-auto" src="/img/logos/workflow-mark-on-dark.svg" alt="Workflow logo" />
-            <img className="hidden lg:block h-8 w-auto" src="/img/logos/workflow-logo-on-dark.svg" alt="Workflow logo" />
-          </div>
+          <LogoImage />
           <div className="hidden sm:block sm:ml-6">
             <div className="flex">
               <Link to={ROUTES.LANDING} className="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Home</Link>
