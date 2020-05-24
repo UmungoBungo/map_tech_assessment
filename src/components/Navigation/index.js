@@ -13,6 +13,10 @@ const Navigation = () => {
     setMobMenuOpen(!mobMenuOpen)
   }
 
+  const closeMobMenu = () => {
+    setMobMenuOpen(false)
+  }
+
   return (
     <AuthUserContext.Consumer>
       {authUser =>
@@ -20,11 +24,14 @@ const Navigation = () => {
           <NavigationAuth
             authUser={authUser}
             toggleMobMenu={toggleMobMenu}
-            mobMenuOpen={mobMenuOpen} />
+            mobMenuOpen={mobMenuOpen}
+            closeMobMenu={closeMobMenu}
+          />
         ) : (
             <NavigationNonAuth
               toggleMobMenu={toggleMobMenu}
               mobMenuOpen={mobMenuOpen}
+              closeMobMenu={closeMobMenu}
             />
           )
       }
@@ -32,8 +39,8 @@ const Navigation = () => {
   );
 };
 
-const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen }) => (
-  <nav className="bg-gray-800">
+const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu }) => (
+  <nav className="bg-gray-800" onBlur={closeMobMenu}>
     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div className="relative flex items-center justify-between h-16">
         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -109,11 +116,11 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen }) => (
         <a href="#" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
       </div>
     </div>
-  </nav>
+  </nav >
 );
 
-const NavigationNonAuth = ({ toggleMobMenu, mobMenuOpen }) => (
-  <nav className="bg-gray-800">
+const NavigationNonAuth = ({ toggleMobMenu, mobMenuOpen, closeMobMenu }) => (
+  <nav className="bg-gray-800" onBlur={closeMobMenu}>
     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div className="relative flex items-center justify-between h-16">
         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
