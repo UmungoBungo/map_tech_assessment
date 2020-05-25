@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-
+import FullTitleLogo from '../ImageRendering/full_title'
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
@@ -43,7 +43,7 @@ class PasswordForgetForm extends Component {
     return (
       <>
         <div>
-          <img className="mx-auto h-12 w-auto" src="/img/logos/workflow-mark-on-white.svg" alt="makeMyGames logo" />
+          <FullTitleLogo />
           <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
             Reset account password
             </h2>
