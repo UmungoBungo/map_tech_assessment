@@ -96,7 +96,7 @@ class SignUpFormBase extends Component {
       <>
         <div>
           <FullTitleLogo />
-          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-300">
             Sign up for an account
             </h2>
         </div>
@@ -165,10 +165,10 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <div className="flex items-center">
-    <label className="ml-2 block text-sm leading-5 text-gray-900">
+    <label className="ml-2 block text-sm leading-5 text-gray-300">
       {"Don't have an account? "}
       <Link to={ROUTES.SIGN_UP}>
-        <span className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+        <span className="font-medium text-indigo-400 hover:text-indigo-200 focus:outline-none focus:underline transition ease-in-out duration-150">
           Sign Up
         </span>
       </Link>

@@ -44,7 +44,7 @@ class PasswordForgetForm extends Component {
       <>
         <div>
           <FullTitleLogo />
-          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-300">
             Reset account password
             </h2>
         </div>
@@ -86,7 +86,7 @@ const PasswordForgetLink = () => (
   <div className="flex items-center">
     <label className="ml-2 block text-sm leading-5">
       <Link to={ROUTES.PASSWORD_FORGET}>
-        <span className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+        <span className="font-medium text-indigo-400 hover:text-indigo-200 focus:outline-none focus:underline transition ease-in-out duration-150">
         Forgot your password?
         </span>
       </Link>

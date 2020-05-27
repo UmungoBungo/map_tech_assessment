@@ -5,37 +5,40 @@ import getFirebase, { FirebaseContext } from './Firebase';
 import withAuthentication from './Session/withAuthentication';
 
 class Layout extends Component {
-  state = {
-    firebase: null,
-  };
+    state = {
+        firebase: null,
+    };
 
-  componentDidMount() {
-    const app = import('firebase/app');
-    const auth = import('firebase/auth');
-    const database = import('firebase/database');
+    componentDidMount() {
+        const app = import('firebase/app');
+        const auth = import('firebase/auth');
+        const database = import('firebase/database');
 
-    Promise.all([app, auth, database]).then(values => {
-      const firebase = getFirebase(values[0]);
+        Promise.all([app, auth, database]).then(values => {
+            const firebase = getFirebase(values[0]);
 
-      this.setState({ firebase });
-    });
-  }
+            this.setState({ firebase });
+        });
+    }
 
-  render() {
-    return (
-      <FirebaseContext.Provider value={this.state.firebase}>
-        <AppWithAuthentication {...this.props} />
-      </FirebaseContext.Provider>
-    );
-  }
+    render() {
+        return (
+            <div className="h-screen bg-teal-800">
+                <FirebaseContext.Provider value={this.state.firebase}>
+                    <AppWithAuthentication {...this.props} />
+                </FirebaseContext.Provider>
+            </div>
+        );
+    }
 }
 
 const AppWithAuthentication = withAuthentication(({ children }) => (
-  <Fragment>
-    <Navigation />
-    <hr />
-    {children}
-  </Fragment>
+    <Fragment >
+
+        <Navigation />
+        <hr />
+        {children}
+    </Fragment>
 ));
 
 export default Layout;

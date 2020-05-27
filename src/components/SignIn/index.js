@@ -59,7 +59,7 @@ class SignInFormBase extends Component {
       <>
         <div>
           <FullTitleLogo />
-          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-300">
             Sign in to your account
             </h2>
         </div>
@@ -93,7 +93,7 @@ class SignInFormBase extends Component {
           <div className="mt-6">
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-400 hover:bg-indigo-300 focus:outline-none focus:border-indigo-500 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
               disabled={isInvalid}
               type="submit">
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
