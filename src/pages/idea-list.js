@@ -34,7 +34,7 @@ const IdeaListPage = () => (
                         </div>
                         <div class="flex-grow pl-4">
                             <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">TURN-BASED SIEGE</h2>
-                            <p class="leading-relaxed" style={{ height: '78px' }}>Isometric game, 1 person controlling each team of 5. Main gameplay mechanics of Siege with anchors, roamers, hard breachers, trap operators etc.</p>
+                            <p class="leading-relaxed" style={{ height: '78px' }}>Isometric game, 1 person controlling each team of 5. Main gameplay mechanics of Siege with anchors, roamers, hard breachers, trap operators etc. Characters would have line of sight visibilty.</p>
                         </div>
                     </div>
                     <div class="flex relative pb-12">
