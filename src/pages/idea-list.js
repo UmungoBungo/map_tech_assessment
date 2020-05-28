@@ -20,7 +20,7 @@ const IdeaListPage = () => (
                         </div>
                         <div class="flex-grow pl-4">
                             <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">1 VS. 1</h2>
-                            <p class="leading-relaxed" style={{ height: '78px' }}>First 5 minutes, build your half of the map. Game on! First player to cross the other side's baseline 3 times wins. Shoot to reset the other player to their own baseline.</p>
+                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>First 5 minutes, build your half of the map. Game on! First player to cross the other side's baseline 3 times wins. Shoot to reset the other player to their own baseline.</p>
                         </div>
                     </div>
                     <div class="flex relative pb-12">
@@ -34,7 +34,7 @@ const IdeaListPage = () => (
                         </div>
                         <div class="flex-grow pl-4">
                             <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">TURN-BASED SIEGE</h2>
-                            <p class="leading-relaxed" style={{ height: '78px' }}>Isometric game, 1 person controlling each team of 5. Main gameplay mechanics of Siege with anchors, roamers, hard breachers, trap operators etc. Characters would have line of sight visibilty.</p>
+                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Isometric game, 1 person controlling each team of 5. Main gameplay mechanics of Siege with anchors, roamers, hard breachers, trap operators etc. Characters would have line of sight visibilty.</p>
                         </div>
                     </div>
                     <div class="flex relative pb-12">
@@ -49,7 +49,7 @@ const IdeaListPage = () => (
                         </div>
                         <div class="flex-grow pl-4">
                             <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 3</h2>
-                            <p class="leading-relaxed" style={{ height: '78px' }}>Coloring book nar whal glossier master cleanse umami. Salvia +1 master cleanse blog taiyaki.</p>
+                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Coloring book nar whal glossier master cleanse umami. Salvia +1 master cleanse blog taiyaki.</p>
                         </div>
                     </div>
                     <div class="flex relative pb-12">
@@ -67,7 +67,7 @@ const IdeaListPage = () => (
                         </div>
                         <div class="flex-grow pl-4">
                             <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 4</h2>
-                            <p class="leading-relaxed" style={{ height: '78px' }}>VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
                         </div>
                     </div>
                     <div class="flex relative">
@@ -79,7 +79,7 @@ const IdeaListPage = () => (
                         </div>
                         <div class="flex-grow pl-4">
                             <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 5</h2>
-                            <p class="leading-relaxed" style={{ height: '78px' }}>Pitchfork ugh tattooed scenester echo park gastropub whatever cold-pressed retro.</p>
+                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Pitchfork ugh tattooed scenester echo park gastropub whatever cold-pressed retro.</p>
                         </div>
                     </div>
                 </div>
