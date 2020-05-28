@@ -45,7 +45,7 @@ const Navigation = ({ path }) => {
 };
 
 const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, path }) => (
-    <nav className="bg-gray-700" onBlur={closeMobMenu}>
+    <nav className="bg-gray-700">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -90,15 +90,15 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, pa
                             </button>
                         </div>
                         {/* <!--
-            Profile dropdown panel, show/hide based on dropdown state.
+                            Profile dropdown panel, show/hide based on dropdown state.
 
-            Entering: "transition ease-out duration-100"
-              From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          --> */}
+                            Entering: "transition ease-out duration-100"
+                            From: "transform opacity-0 scale-95"
+                            To: "transform opacity-100 scale-100"
+                            Leaving: "transition ease-in duration-75"
+                            From: "transform opacity-100 scale-100"
+                            To: "transform opacity-0 scale-95"
+                        --> */}
                         <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
                             <div className="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
                                 <Link to={ROUTES.ACCOUNT} className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Your Account</Link>
@@ -115,18 +115,16 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, pa
 
         {/* <!-- Mobile menu, toggle classes based on menu state. --> */}
         <div className={mobMenuOpen ? "" : "hidden sm:hidden"}>
-            <div className="px-2 pt-2 pb-3">
-                <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
-                <a href="#" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
-                <a href="#" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
-                <a href="#" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
+            <div className="px-2 pt-2 pb-3" onBlur={closeMobMenu}>
+                <Link to={ROUTES.LANDING} className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Home</Link>
+                <Link to={ROUTES.IDEA_LIST} className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Ideas</Link>
             </div>
         </div>
     </nav >
 );
 
 const NavigationNonAuth = ({ toggleMobMenu, mobMenuOpen, closeMobMenu, path }) => (
-    <nav className="bg-gray-800" onBlur={closeMobMenu}>
+    <nav className="bg-gray-800">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -137,12 +135,12 @@ const NavigationNonAuth = ({ toggleMobMenu, mobMenuOpen, closeMobMenu, path }) =
                         aria-expanded="false"
                         onClick={toggleMobMenu}>
                         {/* <!-- Icon when menu is closed. -->
-          <!-- Menu open: "hidden", Menu closed: "block" --> */}
+                        <!-- Menu open: "hidden", Menu closed: "block" --> */}
                         {!mobMenuOpen && <svg className="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>}
                         {/* <!-- Icon when menu is open. -->
-          <!-- Menu open: "block", Menu closed: "hidden" --> */}
+                        <!-- Menu open: "block", Menu closed: "hidden" --> */}
                         {mobMenuOpen && <svg className="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>}
@@ -166,11 +164,9 @@ const NavigationNonAuth = ({ toggleMobMenu, mobMenuOpen, closeMobMenu, path }) =
 
         {/* <!-- Mobile menu, toggle classes based on menu state. --> */}
         <div className={mobMenuOpen ? "" : "hidden sm:hidden"}>
-            <div className="px-2 pt-2 pb-3">
-                <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
-                <a href="#" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
-                <a href="#" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
-                <a href="#" className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
+            <div className="px-2 pt-2 pb-3" onBlur={closeMobMenu}>
+                <Link to={ROUTES.LANDING} className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Home</Link>
+                <Link to={ROUTES.IDEA_LIST} className="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Ideas</Link>
             </div>
         </div>
     </nav>
