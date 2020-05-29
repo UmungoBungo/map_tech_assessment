@@ -42,14 +42,13 @@ const IdeaListPage = () => (
                             <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div>
                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="w-5 h-5" viewBox="0 0 24 24">
-                                <circle cx="12" cy="5" r="3"></circle>
-                                <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="w-5 h-5" viewBox="0 0 20 20">
+                                <path fill="none" d="M16.85,7.275l-3.967-0.577l-1.773-3.593c-0.208-0.423-0.639-0.69-1.11-0.69s-0.902,0.267-1.11,0.69L7.116,6.699L3.148,7.275c-0.466,0.068-0.854,0.394-1,0.842c-0.145,0.448-0.023,0.941,0.314,1.27l2.871,2.799l-0.677,3.951c-0.08,0.464,0.112,0.934,0.493,1.211c0.217,0.156,0.472,0.236,0.728,0.236c0.197,0,0.396-0.048,0.577-0.143l3.547-1.864l3.548,1.864c0.18,0.095,0.381,0.143,0.576,0.143c0.256,0,0.512-0.08,0.729-0.236c0.381-0.277,0.572-0.747,0.492-1.211l-0.678-3.951l2.871-2.799c0.338-0.329,0.459-0.821,0.314-1.27C17.705,7.669,17.316,7.343,16.85,7.275z M13.336,11.754l0.787,4.591l-4.124-2.167l-4.124,2.167l0.788-4.591L3.326,8.5l4.612-0.67l2.062-4.177l2.062,4.177l4.613,0.67L13.336,11.754z"></path>
                             </svg>
                         </div>
                         <div className="flex-grow pl-4">
-                            <h2 className="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 3</h2>
-                            <p className="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Coloring book nar whal glossier master cleanse umami. Salvia +1 master cleanse blog taiyaki.</p>
+                            <h2 className="font-medium title-font text-sm text-white mb-1 tracking-wider">MARIO KART W/ MOUSE AIM</h2>
+                            <p className="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Left hand holds a controller for analog stick driving accuracy. Right hand holds a mouse for accurate shooting mechanics like an FPS.</p>
                         </div>
                     </div>
                     <div className="flex relative pb-12">
