@@ -9,6 +9,7 @@ import { Location } from '@reach/router';
 
 const Navigation = ({ path }) => {
     const [mobMenuOpen, setMobMenuOpen] = useState(false);
+    const [profileMenuOpen, setProfileMenuOpen] = useState(false);
 
     const toggleMobMenu = () => {
         setMobMenuOpen(!mobMenuOpen)
@@ -17,6 +18,15 @@ const Navigation = ({ path }) => {
     const closeMobMenu = () => {
         setMobMenuOpen(false)
     }
+
+    const toggleProfileMenu = () => {
+        setProfileMenuOpen(!profileMenuOpen)
+    }
+
+    const closeProfileMenu = () => {
+        setProfileMenuOpen(false)
+    }
+
 
     const { location } = path;
 
@@ -29,6 +39,9 @@ const Navigation = ({ path }) => {
                         toggleMobMenu={toggleMobMenu}
                         mobMenuOpen={mobMenuOpen}
                         closeMobMenu={closeMobMenu}
+                        toggleProfileMenu={toggleProfileMenu}
+                        profileMenuOpen={profileMenuOpen}
+                        closeProfileMenu={closeProfileMenu}
                         path={path}
                     />
                 ) : (
@@ -44,7 +57,7 @@ const Navigation = ({ path }) => {
     );
 };
 
-const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, path }) => (
+const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, toggleProfileMenu, profileMenuOpen, closeProfileMenu, path }) => (
     <nav className="bg-gray-700">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
@@ -55,7 +68,6 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, pa
                         aria-label="Main menu"
                         aria-expanded="false"
                         onClick={toggleMobMenu}>
-                        {/* <!-- Icon when menu is closed. --> */}
                         <svg className="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                             {!mobMenuOpen && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />}
                             {mobMenuOpen && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />}
@@ -82,7 +94,7 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, pa
                     {/* <!-- Profile dropdown --> */}
                     <div className="ml-3 relative">
                         <div>
-                            <button className="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out" id="user-menu" aria-label="User menu" aria-haspopup="true">
+                            <button className="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out" id="user-menu" aria-label="User menu" aria-haspopup="true" onClick={toggleProfileMenu}>
                                 <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
                             </button>
                         </div>
@@ -96,13 +108,13 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, pa
                             From: "transform opacity-100 scale-100"
                             To: "transform opacity-0 scale-95"
                         --> */}
-                        <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
-                            <div className="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                        {profileMenuOpen && <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
+                            <div className="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" onBlur={closeProfileMenu}>
                                 <Link to={ROUTES.ACCOUNT} className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Your Account</Link>
                                 <Link onClick="#" className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Settings</Link>
                                 <SignOutButton/>
                             </div>
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </div>
@@ -129,16 +141,10 @@ const NavigationNonAuth = ({ toggleMobMenu, mobMenuOpen, closeMobMenu, path }) =
                         aria-label="Main menu"
                         aria-expanded="false"
                         onClick={toggleMobMenu}>
-                        {/* <!-- Icon when menu is closed. -->
-                        <!-- Menu open: "hidden", Menu closed: "block" --> */}
-                        {!mobMenuOpen && <svg className="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>}
-                        {/* <!-- Icon when menu is open. -->
-                        <!-- Menu open: "block", Menu closed: "hidden" --> */}
-                        {mobMenuOpen && <svg className="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>}
+                        <svg className="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            {!mobMenuOpen && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />}
+                            {mobMenuOpen && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />}
+                        </svg>
                     </button>
                 </div>
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
