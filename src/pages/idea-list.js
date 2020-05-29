@@ -6,58 +6,58 @@ import Layout from '../components/layout';
 
 const IdeaListPage = () => (
     <Fragment>
-        <section class="text-gray-400 body-font">
+        <section className="text-gray-400 body-font">
             <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-md w-full">
-                    <div class="flex relative pb-12">
-                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    <div className="flex relative pb-12">
+                        <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
+                            <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div>
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-width="1" class="w-5 h-5" viewBox="0 0 20 20">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" strokeWidth="1" className="w-5 h-5" viewBox="0 0 20 20">
                                 <path fill="none" d="M16.382,15.015h0.455h0.457V4.985h-0.457h-0.455V15.015z M16.837,4.985c1.008,0,1.824-0.816,1.824-1.822c0-1.008-0.816-1.824-1.824-1.824c-1.006,0-1.822,0.816-1.822,1.824C15.015,4.169,15.831,4.985,16.837,4.985z M16.837,2.25c0.504,0,0.913,0.409,0.913,0.913c0,0.502-0.409,0.911-0.913,0.911c-0.502,0-0.911-0.409-0.911-0.911C15.926,2.659,16.335,2.25,16.837,2.25z M15.015,3.618V3.163V2.706H4.986v0.457v0.455H15.015z M3.162,15.01c-1.007,0-1.823,0.816-1.823,1.822c0,1.008,0.816,1.824,1.823,1.824s1.824-0.816,1.824-1.824C4.986,15.831,4.169,15.015,3.162,15.015z M3.162,17.75c-0.503,0-0.911-0.409-0.911-0.913c0-0.502,0.408-0.911,0.911-0.911c0.504,0,0.912,0.409,0.912,0.911C4.074,17.341,3.666,17.75,3.162,17.75z M4.986,16.382v0.455v0.457h10.029v-0.457v-0.455H4.986zM16.837,15.015c-1.006,0-1.822,0.816-1.822,1.822c0,1.008,0.816,1.824,1.822,1.824c1.008,0,1.824-0.816,1.824-1.824C18.661,15.831,17.845,15.015,16.837,15.015z M16.837,17.75c-0.502,0-0.911-0.409-0.911-0.913c0-0.502,0.409-0.911,0.911-0.911c0.504,0,0.913,0.409,0.913,0.911C17.75,17.341,17.341,17.75,16.837,17.75z M3.618,4.985H3.162H2.707v10.029h0.456h0.456V4.985zM4.986,3.163c0-1.008-0.817-1.824-1.824-1.824S1.339,2.155,1.339,3.163c0,1.006,0.816,1.822,1.823,1.822S4.986,4.169,4.986,3.163zM3.162,4.074c-0.503,0-0.911-0.409-0.911-0.911c0-0.504,0.408-0.913,0.911-0.913c0.504,0,0.912,0.409,0.912,0.913C4.074,3.665,3.666,4.074,3.162,4.074z"></path>
                             </svg>
                         </div>
-                        <div class="flex-grow pl-4">
-                            <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">1 VS. 1</h2>
-                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>First 5 minutes, build your half of the map. Game on! First player to cross the other side's baseline 3 times wins. Shoot to reset the other player to their own baseline.</p>
+                        <div className="flex-grow pl-4">
+                            <h2 className="font-medium title-font text-sm text-white mb-1 tracking-wider">1 VS. 1</h2>
+                            <p className="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>First 5 minutes, build your half of the map. Game on! First player to cross the other side's baseline 3 times wins. Shoot to reset the other player to their own baseline.</p>
                         </div>
                     </div>
-                    <div class="flex relative pb-12">
-                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    <div className="flex relative pb-12">
+                        <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
+                            <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div>
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" class="w-5 h-5" viewBox="0 0 20 20">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="w-5 h-5" viewBox="0 0 20 20">
                                 <path d="M17.659,9.597h-1.224c-0.199-3.235-2.797-5.833-6.032-6.033V2.341c0-0.222-0.182-0.403-0.403-0.403S9.597,2.119,9.597,2.341v1.223c-3.235,0.2-5.833,2.798-6.033,6.033H2.341c-0.222,0-0.403,0.182-0.403,0.403s0.182,0.403,0.403,0.403h1.223c0.2,3.235,2.798,5.833,6.033,6.032v1.224c0,0.222,0.182,0.403,0.403,0.403s0.403-0.182,0.403-0.403v-1.224c3.235-0.199,5.833-2.797,6.032-6.032h1.224c0.222,0,0.403-0.182,0.403-0.403S17.881,9.597,17.659,9.597 M14.435,10.403h1.193c-0.198,2.791-2.434,5.026-5.225,5.225v-1.193c0-0.222-0.182-0.403-0.403-0.403s-0.403,0.182-0.403,0.403v1.193c-2.792-0.198-5.027-2.434-5.224-5.225h1.193c0.222,0,0.403-0.182,0.403-0.403S5.787,9.597,5.565,9.597H4.373C4.57,6.805,6.805,4.57,9.597,4.373v1.193c0,0.222,0.182,0.403,0.403,0.403s0.403-0.182,0.403-0.403V4.373c2.791,0.197,5.026,2.433,5.225,5.224h-1.193c-0.222,0-0.403,0.182-0.403,0.403S14.213,10.403,14.435,10.403"></path>
                             </svg>
                         </div>
-                        <div class="flex-grow pl-4">
-                            <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">TURN-BASED SIEGE</h2>
-                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Isometric game, 1 person controlling each team of 5. Main gameplay mechanics of Siege with anchors, roamers, hard breachers, trap operators etc. Characters would have line of sight visibilty.</p>
+                        <div className="flex-grow pl-4">
+                            <h2 className="font-medium title-font text-sm text-white mb-1 tracking-wider">TURN-BASED SIEGE</h2>
+                            <p className="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Isometric game, 1 person controlling each team of 5. Main gameplay mechanics of Siege with anchors, roamers, hard breachers, trap operators etc. Characters would have line of sight visibilty.</p>
                         </div>
                     </div>
-                    <div class="flex relative pb-12">
-                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    <div className="flex relative pb-12">
+                        <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
+                            <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div>
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" class="w-5 h-5" viewBox="0 0 24 24">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="w-5 h-5" viewBox="0 0 24 24">
                                 <circle cx="12" cy="5" r="3"></circle>
                                 <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
                             </svg>
                         </div>
-                        <div class="flex-grow pl-4">
-                            <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 3</h2>
-                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Coloring book nar whal glossier master cleanse umami. Salvia +1 master cleanse blog taiyaki.</p>
+                        <div className="flex-grow pl-4">
+                            <h2 className="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 3</h2>
+                            <p className="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Coloring book nar whal glossier master cleanse umami. Salvia +1 master cleanse blog taiyaki.</p>
                         </div>
                     </div>
-                    <div class="flex relative pb-12">
-                        <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-                            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                    <div className="flex relative pb-12">
+                        <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
+                            <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
                         </div>
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-width="1" class="w-5 h-5" viewBox="0 0 20 20">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" strokeWidth="1" className="w-5 h-5" viewBox="0 0 20 20">
                                 <path fill="none" d="M8.652,16.404c-0.186,0-0.337,0.151-0.337,0.337v2.022c0,0.186,0.151,0.337,0.337,0.337s0.337-0.151,0.337-0.337v-2.022C8.989,16.555,8.838,16.404,8.652,16.404z"></path>
                                 <path fill="none" d="M11.348,16.404c-0.186,0-0.337,0.151-0.337,0.337v2.022c0,0.186,0.151,0.337,0.337,0.337s0.337-0.151,0.337-0.337v-2.022C11.685,16.555,11.535,16.404,11.348,16.404z"></path>
                                 <path fill="none" d="M17.415,5.281V4.607c0-2.224-1.847-4.045-4.103-4.045H10H6.687c-2.256,0-4.103,1.82-4.103,4.045v0.674H10H17.415z"></path>
@@ -65,21 +65,21 @@ const IdeaListPage = () => (
                                 <path fill="none" d="M10,16.067c-0.186,0-0.337,0.151-0.337,0.337V19.1c0,0.186,0.151,0.337,0.337,0.337s0.337-0.151,0.337-0.337v-2.696C10.337,16.218,10.186,16.067,10,16.067z"></path>
                             </svg>
                         </div>
-                        <div class="flex-grow pl-4">
-                            <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 4</h2>
-                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+                        <div className="flex-grow pl-4">
+                            <h2 className="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 4</h2>
+                            <p className="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
                         </div>
                     </div>
-                    <div class="flex relative">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" class="w-5 h-5" viewBox="0 0 20 20">
+                    <div className="flex relative">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-500 inline-flex items-center justify-center text-white relative z-10">
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" className="w-5 h-5" viewBox="0 0 20 20">
                                 <path fill="none" d="M18.796,6.974h-0.652V5.201c0-0.457-0.372-0.831-0.831-0.831H1.204c-0.459,0-0.831,0.373-0.831,0.831v9.599c0,0.459,0.372,0.831,0.831,0.831h16.11c0.459,0,0.831-0.372,0.831-0.831v-1.704h0.652c0.459,0,0.831-0.37,0.831-0.831v-4.46C19.627,7.346,19.256,6.974,18.796,6.974z M16.483,13.969H2.034V6.031h14.448v1.773v4.46V13.969z"></path>
                                 <polygon fill="none" points="8.677,7.451 8.653,7.453 4.338,11.415 8.336,9.719 9.84,12.551 14.179,8.585 10.179,10.282 	"></polygon>
                             </svg>
                         </div>
-                        <div class="flex-grow pl-4">
-                            <h2 class="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 5</h2>
-                            <p class="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Pitchfork ugh tattooed scenester echo park gastropub whatever cold-pressed retro.</p>
+                        <div className="flex-grow pl-4">
+                            <h2 className="font-medium title-font text-sm text-white mb-1 tracking-wider">GAME IDEA 5</h2>
+                            <p className="leading-relaxed overflow-auto border-b" style={{ height: '117px'}}>Pitchfork ugh tattooed scenester echo park gastropub whatever cold-pressed retro.</p>
                         </div>
                     </div>
                 </div>

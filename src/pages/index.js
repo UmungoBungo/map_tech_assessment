@@ -11,7 +11,6 @@ const LandingPage = () => (
             <p className="ml-2 block text-sm leading-5 text-gray-300">
                 The Landing Page is open to everyone, even though the user isn't
                 signed in.
-                {process.env.GATSBY_TESTING_VAR}
             </p>
         </div>
     </Fragment>
