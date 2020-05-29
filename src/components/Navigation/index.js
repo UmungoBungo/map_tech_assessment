@@ -56,13 +56,10 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, pa
                         aria-expanded="false"
                         onClick={toggleMobMenu}>
                         {/* <!-- Icon when menu is closed. --> */}
-                        {!mobMenuOpen && <svg className="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>}
-                        {/* <!-- Icon when menu is open. --> */}
-                        {mobMenuOpen && <svg className="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>}
+                        <svg className="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            {!mobMenuOpen && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />}
+                            {mobMenuOpen && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />}
+                        </svg>
                     </button>
                 </div>
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
