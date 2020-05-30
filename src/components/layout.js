@@ -23,7 +23,7 @@ class Layout extends Component {
 
     render() {
         return (
-            <div className="h-screen bg-teal-800">
+            <div className="min-h-screen bg-teal-800">
                 <FirebaseContext.Provider value={this.state.firebase}>
                     <AppWithAuthentication {...this.props} />
                 </FirebaseContext.Provider>
