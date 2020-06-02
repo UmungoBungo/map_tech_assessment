@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+.site-background-color {
+    @apply bg-gray-100;
+}
+
+.plain-text-color {
+    @apply text-gray-900;
+}
+
+.cta-button {
+    @apply bg-purple-600;
+    @apply transition;
+    @apply ease-in-out;
+    @apply duration-150;
+    @apply text-white;
+    @apply border-2;
+    @apply border-transparent;
+}
+
+.cta-button:hover {
+    @apply bg-purple-500;
+}
+
+.cta-button:focus {
+    @apply outline-none;
+    @apply border-red-800;
+}
+
+.cta-button:active {
+    @apply bg-purple-700;
+}
+
 .link-text {
     @apply font-medium;
     @apply text-purple-400;
@@ -17,8 +48,4 @@
 .link-text:focus {
     @apply outline-none;
     @apply underline;
-}
-
-.plain-text-color {
-    @apply text-gray-300;
 }
