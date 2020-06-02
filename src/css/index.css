@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.link-text {
+    @apply font-medium;
+    @apply text-purple-400;
+    @apply transition;
+    @apply ease-in-out;
+    @apply duration-150;
+}
+
+.link-text:hover {
+    @apply text-purple-200;
+}
+
+.link-text:focus {
+    @apply outline-none;
+    @apply underline;
+}

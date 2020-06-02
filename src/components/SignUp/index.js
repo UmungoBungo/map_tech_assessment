@@ -143,7 +143,7 @@ class SignUpFormBase extends Component {
                     <div className="mt-6">
                         <button
                             type="submit"
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-purple-600 hover:bg-purple-500 focus:outline-none focus:border-purple-700 focus:shadow-outline-purple active:bg-purple-700 transition duration-150 ease-in-out"
+                            className="relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-purple-600 hover:bg-purple-500 focus:outline-none focus:border-purple-700 focus:shadow-outline-purple active:bg-purple-700 transition duration-150 ease-in-out"
                             disabled={isInvalid}
                             type="submit">
                             {isInvalid && <span className="absolute left-0 inset-y-0 flex items-center pl-3">
@@ -165,10 +165,8 @@ const SignUpLink = () => (
     <div className="flex items-center">
         <label className="ml-2 block text-sm leading-5 text-gray-300">
             {"Don't have an account? "}
-            <Link to={ROUTES.SIGN_UP}>
-                <span className="font-medium text-purple-400 hover:text-purple-200 focus:outline-none focus:underline transition ease-in-out duration-150">
-                    Sign Up
-        </span>
+            <Link to={ROUTES.SIGN_UP} className="link-text">
+                Sign Up
             </Link>
         </label>
     </div>

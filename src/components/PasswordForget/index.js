@@ -85,10 +85,8 @@ class PasswordForgetForm extends Component {
 const PasswordForgetLink = () => (
     <div className="flex items-center">
         <label className="ml-2 block text-sm leading-5">
-            <Link to={ROUTES.PASSWORD_FORGET}>
-                <span className="font-medium text-purple-400 hover:text-purple-200 focus:outline-none focus:underline transition ease-in-out duration-150">
-                    Forgot your password?
-        </span>
+            <Link to={ROUTES.PASSWORD_FORGET} className="link-text">
+                Forgot your password?
             </Link>
         </label>
     </div>
