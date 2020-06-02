@@ -112,7 +112,7 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, to
                             <div className="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu" onBlur={closeProfileMenu}>
                                 <Link to={ROUTES.ACCOUNT} className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Your Account</Link>
                                 <Link onClick="#" className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Settings</Link>
-                                <SignOutButton/>
+                                <SignOutButton />
                             </div>
                         </div>}
                     </div>
