@@ -44,7 +44,7 @@ class PasswordForgetForm extends Component {
             <>
                 <div>
                     <FullTitleLogo />
-                    <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-300">
+                    <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold plain-text-color">
                         Reset account password
             </h2>
                 </div>

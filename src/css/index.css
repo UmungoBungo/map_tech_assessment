@@ -18,3 +18,7 @@
     @apply outline-none;
     @apply underline;
 }
+
+.plain-text-color {
+    @apply text-gray-300;
+}

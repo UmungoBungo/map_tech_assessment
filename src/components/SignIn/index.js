@@ -51,7 +51,7 @@ class SignInFormBase extends Component {
             <>
                 <div>
                     <FullTitleLogo />
-                    <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-300">
+                    <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold plain-text-color">
                         Sign in to your account
             </h2>
                 </div>
@@ -97,7 +97,7 @@ class SignInFormBase extends Component {
                             </span>}
                             Sign in
                         </button>
-                        {error && <p className="ml-2 block text-sm leading-5 text-gray-300">{error.message}</p>}
+                        {error && <p className="ml-2 block text-sm leading-5 plain-text-color">{error.message}</p>}
                     </div>
                     <div className="mt-6 flex items-center">
                         <PasswordForgetLink />
