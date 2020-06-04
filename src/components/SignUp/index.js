@@ -11,7 +11,6 @@ const INITIAL_STATE = {
     email: '',
     passwordOne: '',
     passwordTwo: '',
-    isAdmin: false,
     error: null,
 };
 
@@ -30,12 +29,8 @@ class SignUpFormBase extends Component {
     }
 
     onSubmit = event => {
-        const { username, email, passwordOne, isAdmin } = this.state;
+        const { username, email, passwordOne } = this.state;
         const roles = {};
-
-        if (isAdmin) {
-            roles[ROLES.ADMIN] = ROLES.ADMIN;
-        }
 
         this.props.firebase
             .doCreateUserWithEmailAndPassword(email, passwordOne)
