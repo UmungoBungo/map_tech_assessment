@@ -21,7 +21,7 @@ const ERROR_MSG_ACCOUNT_EXISTS = `
   Try to login with this account instead.
 `;
 
-class SignUpFormBase extends Component {
+class NewIdeaFormBase extends Component {
     constructor(props) {
         super(props);
 
@@ -87,7 +87,7 @@ class SignUpFormBase extends Component {
                 <div>
                     <FullTitleLogo />
                     <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold plain-text-color">
-                        Sign up for an account
+                        Submit your dream game idea
             </h2>
                 </div>
                 <form className="mt-8" onSubmit={this.onSubmit}>
@@ -166,6 +166,6 @@ const SignUpLink = () => (
     </div>
 );
 
-export default withFirebase(SignUpFormBase);
+export default withFirebase(NewIdeaFormBase);
 
 export { SignUpLink };
