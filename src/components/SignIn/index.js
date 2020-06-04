@@ -13,9 +13,6 @@ const INITIAL_STATE = {
     error: null,
 };
 
-// const ERROR_CODE_ACCOUNT_EXISTS =
-//     'auth/account-exists-with-different-credential';
-
 class SignInFormBase extends Component {
     constructor(props) {
         super(props);
