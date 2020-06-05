@@ -15,9 +15,9 @@
     @apply transition;
     @apply ease-in-out;
     @apply duration-150;
-    @apply text-white;
     @apply border-2;
     @apply border-transparent;
+    color: rgba(255,255,255,0.8);
 }
 
 .cta-button:hover {
