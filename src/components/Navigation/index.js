@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useStaticQuery, graphq } from 'gatsby';
+import { Link } from 'gatsby';
 import { AuthUserContext } from '../Session';
 import SignOutButton from '../SignOut';
 import * as ROUTES from '../../constants/routes';
