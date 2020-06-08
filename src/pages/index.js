@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import * as ROUTES from '../constants/routes';
 import Layout from '../components/layout';
-import LandingImage from '../components/ImageRendering/landing_image'
+import landingGIF from '../data/landingImage.gif'
 
 const LandingPage = () => (
     <Fragment>
@@ -28,7 +28,7 @@ const LandingPage = () => (
                             </p>
                             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                 <div class="rounded-md shadow">
-                                    <Link to={ROUTES.IDEA_LIST} class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md cta-button md:py-4 md:text-lg md:px-10">
+                                    <Link to={ROUTES.NEW_IDEA} class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md cta-button md:py-4 md:text-lg md:px-10">
                                         Post idea
                                     </Link>
                                 </div>
@@ -43,8 +43,7 @@ const LandingPage = () => (
                 </div>
             </div>
             <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                {/* <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="" /> */}
-                    <LandingImage />
+                <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src={landingGIF} alt="make my games landing image" />
             </div>
         </div>
     </Fragment>
