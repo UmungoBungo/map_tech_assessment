@@ -65,8 +65,7 @@ class PasswordForgetForm extends Component {
                         <button
                             type="submit"
                             className="group relative w-full flex justify-center py-2 px-4 text-sm leading-5 font-medium rounded-md cta-button focus:shadow-outline-purple"
-                            disabled={isInvalid}
-                            type="submit">
+                            disabled={isInvalid}>
                             {isInvalid && <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                                 <svg className="h-5 w-5 text-purple-400 transition ease-in-out duration-150" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
@@ -84,11 +83,11 @@ class PasswordForgetForm extends Component {
 
 const PasswordForgetLink = () => (
     <div className="flex items-center">
-        <label className="ml-2 block text-sm leading-5">
+        <span className="ml-2 block text-sm leading-5">
             <Link to={ROUTES.PASSWORD_FORGET} className="link-text">
                 Forgot your password?
             </Link>
-        </label>
+        </span>
     </div>
 );
 
