@@ -28,7 +28,7 @@ const LandingPage = () => (
                             </p>
                             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                 <div class="rounded-md shadow">
-                                    <Link to={ROUTES.IDEA_LIST} class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base uppercase leading-6 font-medium rounded-md cta-button md:py-4 md:text-lg md:px-10">
+                                    <Link to={ROUTES.NEW_IDEA} class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base uppercase leading-6 font-medium rounded-md cta-button md:py-4 md:text-lg md:px-10">
                                         Post idea
                                     </Link>
                                 </div>
