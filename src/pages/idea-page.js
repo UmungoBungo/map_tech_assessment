@@ -36,7 +36,7 @@ const IdeaPage = (title) => (
                                     Details
                                 </dt>
                                 <dd className="mt-1 text-sm leading-5 text-gray-900 sm:mt-0 sm:col-span-2">
-                                    Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
+                                What's with you kids? Every other day it's food, food, food. Alright, I'll get you some stupid food. Oh God, what have I done? Five hours? Aw, man! Couldn't you just get me the death penalty? It must be wonderful. I just told you! You've killed me! Ah, the 'Breakfast Club' soundtrack! I can't wait til I'm old enough to feel ways about stuff! Bender, we're trying our best. Yes, if you make it look like an electrical fire. When you do things right, people won't be sure you've done anything at all.
                                 </dd>
                             </div>
                         </dl>
