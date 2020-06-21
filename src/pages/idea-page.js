@@ -7,7 +7,7 @@ const IdeaPage = (title) => (
     <Fragment>
         <section className="text-gray-400 body-font">
             <div className="flex items-center justify-center py-12 px-0 sm:px-6 lg:px-8">
-                <div className="max-w-4xl w-full">
+                <div className="max-w-4xl w-full mx-8 sm:mx-0">
                     <div>
                         <h2 className="text-2xl text-center leading-6 font-medium text-gray-900">
                             'props.title'
@@ -42,7 +42,7 @@ const IdeaPage = (title) => (
                         </dl>
                     </div>
                     <div className="mt-8 flex justify-end">
-                        <Link to={ROUTES.SIGN_UP} className="px-3 py-2 mr-8 sm:mr-0 rounded-md text-sm font-medium uppercase leading-5 cta-button focus:shadow-outline-purple">Pledge</Link>
+                        <Link to={ROUTES.SIGN_UP} className="px-3 py-2 rounded-md text-sm font-medium uppercase leading-5 cta-button focus:shadow-outline-purple">Pledge</Link>
                     </div>
                 </div>
             </div>
