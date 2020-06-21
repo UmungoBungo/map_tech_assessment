@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, navigate } from 'gatsby';
 
 import { withFirebase } from '../Firebase';
+import { SignInLink } from '../SignIn';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 import FullTitleLogo from '../ImageRendering/full_title'
@@ -148,6 +149,9 @@ class SignUpFormBase extends Component {
                             Sign up
                         </button>
                         {error && <p className="ml-2 block text-sm leading-5 plain-text-color">{error.message}</p>}
+                    </div>
+                    <div className="mt-6 flex items-center">
+                        <SignInLink />
                     </div>
                 </form>
             </>
