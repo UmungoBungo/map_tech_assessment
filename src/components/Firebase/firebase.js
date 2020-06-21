@@ -85,6 +85,12 @@ class Firebase {
   message = uid => this.db.ref(`messages/${uid}`);
 
   messages = () => this.db.ref('messages');
+
+  // *** Idea API ***
+
+  idea = uid => this.db.ref(`ideas/${uid}`);
+
+  ideas = () => this.db.ref('ideas');
 }
 
 let firebase;

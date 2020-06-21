@@ -98,7 +98,8 @@ class SignUpFormBase extends Component {
                                 aria-label="username"
                                 name="username"
                                 type="text"
-                                required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                                required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                                 placeholder="Username"
                                 onChange={this.onChange} />
                         </div>
@@ -108,7 +109,8 @@ class SignUpFormBase extends Component {
                                 name="email"
                                 type="email"
                                 autoComplete="username"
-                                required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                                required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                                 placeholder="Email Address"
                                 onChange={this.onChange} />
                         </div>
@@ -118,7 +120,8 @@ class SignUpFormBase extends Component {
                                 name="passwordOne"
                                 type="password"
                                 autoComplete="new-password"
-                                required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                                required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                                 placeholder="Password"
                                 onChange={this.onChange} />
                         </div>
@@ -128,7 +131,8 @@ class SignUpFormBase extends Component {
                                 name="passwordTwo"
                                 type="password"
                                 autoComplete="new-password"
-                                required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                                required
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                                 placeholder="Confirm Password"
                                 onChange={this.onChange} />
                         </div>
@@ -137,7 +141,7 @@ class SignUpFormBase extends Component {
                     <div className="mt-6">
                         <button
                             type="submit"
-                            className="relative w-full flex justify-center py-2 px-4 text-sm leading-5 font-medium rounded-md cta-button focus:shadow-outline-purple"
+                            className="relative w-full py-2 px-4 text-sm leading-5 font-medium rounded-md cta-button focus:shadow-outline-purple"
                             disabled={isInvalid}>
                             {isInvalid && <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                                 <svg className="h-5 w-5 text-purple-400 transition ease-in-out duration-150" fill="currentColor" viewBox="0 0 20 20">
