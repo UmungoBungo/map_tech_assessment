@@ -95,10 +95,12 @@ class SignInFormBase extends Component {
                             </span>}
                             Sign in
                         </button>
-                        {error && <p className="ml-2 block text-sm leading-5 plain-text-color">{error.message}</p>}
                     </div>
                     <div className="mt-6 flex items-center">
                         <PasswordForgetLink />
+                    </div>
+                    <div className="mt-6">
+                        {error && <p className="ml-2 block text-sm text-red-400 leading-5">{error.message}</p>}
                     </div>
                 </form>
             </>

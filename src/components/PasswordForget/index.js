@@ -75,7 +75,9 @@ class PasswordForgetForm extends Component {
                             Reset My Password
                         </button>
                     </div>
-                    {error && <p>{error.message}</p>}
+                    <div className="mt-6">
+                        {error && <p className="ml-2 block text-sm text-red-400 leading-5">{error.message}</p>}
+                    </div>
                 </form>
             </>
         );
