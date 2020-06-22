@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { navigate } from 'gatsby';
+import { navigate, Link } from 'gatsby';
 import { PasswordForgetLink } from '../PasswordForget';
 import { SignUpLink } from '../SignUp';
 import FullTitleLogo from '../ImageRendering/full_title'
@@ -106,6 +106,16 @@ class SignInFormBase extends Component {
     }
 }
 
-const SignInForm = withFirebase(SignInFormBase);
+const SignInLink = () => (
+    <div className="flex items-center">
+        <span className="ml-2 block text-sm leading-5">
+            <Link to={ROUTES.SIGN_IN} className="link-text">
+                Already have an account?
+            </Link>
+        </span>
+    </div>
+);
 
-export default SignInForm;
+export default withFirebase(SignInFormBase);
+
+export { SignInLink };
