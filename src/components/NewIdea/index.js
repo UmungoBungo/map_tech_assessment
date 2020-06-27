@@ -20,20 +20,21 @@ class NewIdeaFormBase extends Component {
     }
 
     onSubmit = authUser => event => {
+        console.log('breakpoint')
         const { ideaTitle, tldr, described } = this.state;
 
-        this.props.firebase.ideas()
-            .push({
-                userId: authUser.uid,
-                title: ideaTitle,
-                tldr: tldr,
-                described: described,
-                createdAt: this.props.firebase.serverValue.TIMESTAMP,
-            })
+        this.props.firebase.ideas().add({
+            userId: authUser.uid,
+            title: ideaTitle,
+            tldr: tldr,
+            described: described,
+            createdAt: this.props.firebase.timestamp(),
+        })
             .then(() => {
                 this.setState({ ...INITIAL_STATE });
                 navigate(ROUTES.IDEA_PAGE);
             }).catch(error => {
+                console.error("Error adding document: ", error);
                 this.setState({ error });
             });
 
