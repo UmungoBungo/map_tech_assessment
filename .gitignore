@@ -30,6 +30,7 @@ yarn-error.log*
 
 .firebase
 .firebaserc
+firebase.json
 
 # gatsby
 .cache/

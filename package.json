@@ -16,6 +16,7 @@
     "gatsby-plugin-postcss": "^2.3.1",
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-source-filesystem": "^2.3.8",
+    "gatsby-source-firestore": "^1.0.3",
     "gatsby-transformer-sharp": "^2.5.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
