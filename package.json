@@ -2,7 +2,7 @@
   "name": "react-gastby-firebase-authentication",
   "description": "Gatsby hello world starter",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve"
@@ -23,6 +23,7 @@
     "recompose": "^0.30.0"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "tailwindcss": "^1.4.6"
   }
 }
