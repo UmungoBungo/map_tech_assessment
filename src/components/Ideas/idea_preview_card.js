@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import * as ROUTES from '../../constants/routes';
 
-const IdeaPreviewCard = ({ ideaTitle, ideaContent, pledged }) => (
+const IdeaPreviewCard = ({ slug, ideaTitle, ideaContent, pledged }) => (
     <div className="overflow-hidden shadow-xl rounded-lg my-12 border border-black">
-        <Link to={ROUTES.IDEA_PAGE}>
+        <Link to={ROUTES.IDEA_PAGE + '/' + slug}>
             <h3 className="bg-white px-4 py-5 sm:px-6 text-lg leading-6 font-medium text-gray-900">
                 {ideaTitle}
             </h3>

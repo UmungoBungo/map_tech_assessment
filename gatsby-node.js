@@ -4,6 +4,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
     const { createNodeField } = actions
 
     if (node.internal.type === 'Idea') {
+        console.log('inside node creation', node.title)
         const underscoredIdeaTitle = node.title.replace(/ /g,"_")
         const slug = node.id + '/' + underscoredIdeaTitle
         createNodeField({
@@ -34,6 +35,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
     `)
 
     res.data.allIdea.edges.forEach((edge) => {
+        console.log('inside page create', edge.node.title)
         createPage({
             component: ideaTemplate,
             path: `/idea/${edge.node.fields.slug}`,

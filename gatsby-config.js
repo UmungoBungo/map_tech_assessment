@@ -19,7 +19,7 @@ module.exports = {
             map: doc => ({
               title: doc.title,
               tldr: doc.tldr,
-              description: doc.description,
+              described: doc.described,
               user___NODE: doc.userId
             }),
           },
