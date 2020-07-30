@@ -7,9 +7,9 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    { resolve: `gatsby-plugin-build-date`, options: { formatAsDateString: false }},
     { resolve: `gatsby-source-filesystem`, options: { path: `./src/data/` } },
-    {
-      resolve: 'gatsby-source-firestore',
+    { resolve: 'gatsby-source-firestore',
       options: {
         credential: JSON.parse(JSON.stringify({
           type: "service_account",
@@ -31,7 +31,8 @@ module.exports = {
               title: doc.title,
               tldr: doc.tldr,
               described: doc.described,
-              user___NODE: doc.userId
+              user___NODE: doc.userId,
+              createdAt: doc.createdAt
             }),
           },
           {
