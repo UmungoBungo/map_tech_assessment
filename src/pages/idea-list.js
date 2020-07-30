@@ -19,7 +19,7 @@ function IdeaList() {
     return (
         <Layout>
             <Fragment>
-                <Ideas graphqlData={pagesCreated} buildDate={buildDate} />
+                <Ideas buildDate={buildDate} />
             </Fragment>
         </Layout>
     )
