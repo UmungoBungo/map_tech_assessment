@@ -87,7 +87,7 @@ class Ideas extends Component {
           />
         )}
 
-        {!ideas && <div>There are no messages ...</div>}
+        {!ideas && <div>There are no ideas posted yet...</div>}
 
       </div>
     );

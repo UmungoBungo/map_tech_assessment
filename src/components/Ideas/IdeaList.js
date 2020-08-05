@@ -10,9 +10,7 @@ const IdeaList = ({ ideas }) => (
         <ul>
           {ideas.map(idea => (
            <IdeaPreviewCard
-            slug={idea.slug}
-            ideaTitle={idea.title}
-            ideaContent={idea.tldr}
+            idea={idea}
             pageExists={idea.pageExists}
             pledged={'$128'}
           />

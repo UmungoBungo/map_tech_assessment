@@ -8,3 +8,4 @@ export const ADMIN_DETAILS = '/admin/:id';
 export const IDEA_LIST = '/idea-list';
 export const IDEA_PAGE = '/idea';
 export const NEW_IDEA = '/new-idea';
+export const PREBUILD_IDEA = '/prebuild-idea';
