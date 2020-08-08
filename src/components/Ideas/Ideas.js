@@ -54,7 +54,7 @@ class Ideas extends Component {
           });
 
           this.setState({
-            ideas: ideas.reverse(),
+            ideas: ideas,
             loading: false,
           });
         } else {
