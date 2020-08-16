@@ -88,7 +88,7 @@ const PasswordForgetLink = () => (
     <div className="flex items-center">
         <span className="ml-2 block text-sm leading-5">
             <Link to={ROUTES.PASSWORD_FORGET} className="link-text">
-                Forgot your password?
+                Forgotten your password?
             </Link>
         </span>
     </div>
