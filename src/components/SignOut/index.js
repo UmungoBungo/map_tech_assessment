@@ -4,13 +4,13 @@ import { Link } from 'gatsby';
 import { withFirebase } from '../Firebase';
 
 const SignOutButton = ({ firebase }) => (
-    <Link onClick={firebase ? firebase.doSignOut : () => {}} className="block px-4 py-2 text-sm uppercase leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out">Sign Out</Link>
-//   <button
-//     type="button"
-//     onClick={firebase ? firebase.doSignOut : () => {}}
-//   >
-//     Sign Out
-//   </button>
+    <button
+        type="button"
+        onClick={firebase ? firebase.doSignOut : () => { }}
+        className="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700 transition duration-150 ease-in-out"
+    >
+        Sign Out
+    </button>
 );
 
 export default withFirebase(SignOutButton);

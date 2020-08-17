@@ -27,10 +27,7 @@ class PasswordChangeEmailBtn extends Component {
 
     render() {
         return (
-            <div className="flex items-center justify-end">
-                {this.state.emailSent && <span className="pr-2">
-                    email sent!
-                </span>}
+            <div className="flex items-center">
                 <span className="block text-sm leading-5">
                     <button
                         type="button"
@@ -39,6 +36,9 @@ class PasswordChangeEmailBtn extends Component {
                         Send Password Reset Email
                     </button>
                 </span>
+                {this.state.emailSent && <span className="pl-2">
+                    email sent!
+                </span>}
             </div>
         );
     }
