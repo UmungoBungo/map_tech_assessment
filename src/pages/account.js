@@ -36,18 +36,6 @@ const AccountPageBase = () => (
                   </div>
                 </div>
 
-                <div className="mt-6 sm:mt-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                  <label htmlFor="about" className="block text-sm font-medium leading-5 text-gray-700 sm:mt-px sm:pt-2">
-                    About
-                  </label>
-                  <div className="mt-1 sm:mt-0 sm:col-span-2">
-                    <div className="max-w-lg flex rounded-md shadow-sm">
-                      <textarea id="about" rows="3" className="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"></textarea>
-                    </div>
-                    <p className="mt-2 text-sm text-gray-500">Write a few sentences about yourself.</p>
-                  </div>
-                </div>
-
                 <div className="mt-6 sm:mt-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:items-center sm:border-t sm:border-gray-200 sm:pt-5">
                   <label htmlFor="photo" className="block text-sm leading-5 font-medium text-gray-700">
                     Photo
@@ -72,34 +60,10 @@ const AccountPageBase = () => (
             <div className="mt-8 border-t border-gray-200 pt-8 sm:mt-5 sm:pt-10">
               <div>
                 <h3 className="text-lg leading-6 font-medium text-gray-900">
-                  Personal Information
+                  Account
                 </h3>
-                <p className="mt-1 max-w-2xl text-sm leading-5 text-gray-500">
-                  Use a permanent address where you can receive mail.
-                </p>
               </div>
               <div className="mt-6 sm:mt-5">
-                <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                  <label htmlFor="first_name" className="block text-sm font-medium leading-5 text-gray-700 sm:mt-px sm:pt-2">
-                    First name
-                  </label>
-                  <div className="mt-1 sm:mt-0 sm:col-span-2">
-                    <div className="max-w-lg rounded-md shadow-sm sm:max-w-xs">
-                      <input id="first_name" className="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 sm:mt-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                  <label htmlFor="last_name" className="block text-sm font-medium leading-5 text-gray-700 sm:mt-px sm:pt-2">
-                    Last name
-                  </label>
-                  <div className="mt-1 sm:mt-0 sm:col-span-2">
-                    <div className="max-w-lg rounded-md shadow-sm sm:max-w-xs">
-                      <input id="last_name" className="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
-                    </div>
-                  </div>
-                </div>
 
                 <div className="mt-6 sm:mt-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                   <label htmlFor="email" className="block text-sm font-medium leading-5 text-gray-700 sm:mt-px sm:pt-2">
