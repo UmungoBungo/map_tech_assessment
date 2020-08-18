@@ -18,7 +18,7 @@ const INITIAL_STATE = {
 const ERROR_CODE_ACCOUNT_EXISTS = 'auth/email-already-in-use';
 
 const ERROR_MSG_ACCOUNT_EXISTS = `
-  An account with this E-Mail address already exists.
+  An account with this email address already exists.
   Try to login with this account instead.
 `;
 

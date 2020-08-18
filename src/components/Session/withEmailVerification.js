@@ -15,7 +15,9 @@ const withEmailVerification = Component => {
     constructor(props) {
       super(props);
 
-      this.state = { isSent: false };
+      this.state = {
+        isSent: false
+      };
     }
 
     onSendEmailVerification = () => {
@@ -32,29 +34,34 @@ const withEmailVerification = Component => {
               <div>
                 {this.state.isSent ? (
                   <p>
-                    E-Mail confirmation sent: Check you E-Mails (Spam
-                    folder included) for a confirmation E-Mail.
-                    Refresh this page once you confirmed your E-Mail.
+                    Email confirmation sent: Check your emails (Spam folder included) for a confirmation email. Refresh this page once you have confirmed your email.
                   </p>
                 ) : (
-                  <p>
-                    Verify your E-Mail: Check you E-Mails (Spam folder
-                    included) for a confirmation E-Mail or send
-                    another confirmation E-Mail.
-                  </p>
-                )}
+                    <p>
+                      Verify your email: Check your emails (Spam folder included) for a confirmation email or send another confirmation email.
+                    </p>
+                  )}
 
-                <button
-                  type="button"
-                  onClick={this.onSendEmailVerification}
-                  disabled={this.state.isSent}
-                >
-                  Send confirmation E-Mail
+                <div className="flex justify-center mt-5">
+                  <button
+                    type="button"
+                    onClick={this.onSendEmailVerification}
+                    disabled={this.state.isSent}
+                    className="py-2 px-3 border border-gray-300 rounded-md text-sm leading-4 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out"
+                  >
+                    Re-send confirmation email
                 </button>
+                </div>
+
+                <div className="mt-10">
+                  <p>
+                    Accidently changed your account email address? Check your previously used email address for instructions on reverting it back.
+                  </p>
+                </div>
               </div>
             ) : (
-              <Component {...this.props} />
-            )
+                <Component {...this.props} />
+              )
           }
         </AuthUserContext.Consumer>
       );

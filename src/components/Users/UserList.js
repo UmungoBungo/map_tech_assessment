@@ -64,7 +64,7 @@ class UserList extends Component {
                 <strong>ID:</strong> {user.uid}
               </span>
               <span>
-                <strong>E-Mail:</strong> {user.email}
+                <strong>Email:</strong> {user.email}
               </span>
               <span>
                 <strong>Username:</strong> {user.username}
