@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link, navigate } from 'gatsby';
 
 import { withFirebase } from '../Firebase';
-import { SignInLink } from '../SignIn';
+import { SignInLink } from './signIn';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 import FullTitleLogo from '../ImageRendering/full_title'

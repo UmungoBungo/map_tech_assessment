@@ -1,14 +1,14 @@
 import React, { Fragment, useState } from 'react';
 import { compose } from 'recompose';
-import SignOutButton from '../components/SignOut';
+import SignOutButton from '../components/LoginManagement/signOut';
 import Layout from '../components/layout';
 import {
   AuthUserContext,
   withAuthorization,
   withEmailVerification,
 } from '../components/Session';
-import PasswordChangeEmailBtn from '../components/PasswordForget/passwordEmailBtn';
-import ChangeEmailBtn from '../components/PasswordForget/changeEmailBtn';
+import PasswordChangeEmailBtn from '../components/account/passwordEmailBtn';
+import ChangeEmailBtn from '../components/account/changeEmailBtn';
 
 function AccountPageBase() {
 
