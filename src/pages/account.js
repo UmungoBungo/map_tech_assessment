@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { compose } from 'recompose';
-import SignOutButton from '../components/LoginManagement/signOut';
+import SignOutButton from '../components/LoginManagement/signUserOut';
 import Layout from '../components/layout';
 import {
   AuthUserContext,
@@ -45,7 +45,7 @@ function AccountPageBase() {
                   <div className="mt-6 sm:mt-5 sm:grid sm:grid-cols-4 sm:gap-4 sm:items-center sm:border-t sm:border-gray-200 sm:pt-5">
                     <label htmlFor="photo" className="block text-sm leading-5 font-medium text-gray-700">
                       Photo
-                  </label>
+                    </label>
                     <div className="mt-2 sm:mt-0 sm:col-span-2">
                       <div className="flex items-center">
                         <span className="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
@@ -54,7 +54,8 @@ function AccountPageBase() {
                           </svg>
                         </span>
                         <span className="ml-5 rounded-md shadow-sm">
-                          <button type="button" className="py-2 px-3 border border-gray-300 rounded-md text-sm leading-4 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
+                        {/* <input type="file" className="py-2 px-3 border border-gray-300 rounded-md text-sm leading-4 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out"/> */}
+                          <button type="file" className="py-2 px-3 border border-gray-300 rounded-md text-sm leading-4 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
                             Change
                           </button>
                         </span>

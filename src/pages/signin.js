@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
 import Layout from '../components/layout';
-import SignInForm from '../components/LoginManagement/SignIn';
+import SignInForm from '../components/LoginManagement/signUserIn';
 
 const SignInPage = () => (
   <Fragment>

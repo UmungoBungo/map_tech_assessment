@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { navigate, Link } from 'gatsby';
 import { PasswordForgetLink } from '../Account/passwordForget';
-import { SignUpLink } from './signUp';
+import { SignUpLink } from './signUserUp';
 import FullTitleLogo from '../ImageRendering/full_title'
 
 import { withFirebase } from '../Firebase';
