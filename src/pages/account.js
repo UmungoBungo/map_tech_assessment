@@ -7,8 +7,8 @@ import {
   withAuthorization,
   withEmailVerification,
 } from '../components/Session';
-import PasswordChangeEmailBtn from '../components/account/passwordEmailBtn';
-import ChangeEmailBtn from '../components/account/changeEmailBtn';
+import PasswordChangeEmailBtn from '../components/Account/passwordEmailBtn';
+import ChangeEmailBtn from '../components/Account/changeEmailBtn';
 
 function AccountPageBase() {
 
