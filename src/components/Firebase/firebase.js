@@ -18,8 +18,9 @@ class Firebase {
 
     /* Firebase APIs */
 
-    this.auth = app.auth();
-    this.db = app.firestore();
+    this.auth = app.auth()
+    this.db = app.firestore()
+    this.storage = app.storage()
 
   }
 
@@ -67,6 +68,7 @@ class Firebase {
               email: authUser.email,
               emailVerified: authUser.emailVerified,
               providerData: authUser.providerData,
+              picture: authUser.photoURL,
               ...dbUser,
             };
 
