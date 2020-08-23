@@ -5,6 +5,7 @@ import MobNavLink from './mob_nav_link'
 import { AuthUserContext } from '../Session';
 import * as ROUTES from '../../constants/routes';
 import LogoImage from './logo_image'
+import ProfilePicWithDefault from '../Account/profilePicWithDefault'
 
 const Navigation = () => {
     const [mobMenuOpen, setMobMenuOpen] = useState(false);
@@ -91,7 +92,9 @@ const NavigationAuth = ({ authUser, toggleMobMenu, mobMenuOpen, closeMobMenu, to
                     {/* <!-- Profile dropdown --> */}
                     <div className="ml-3 relative">
                         <Link to={ROUTES.ACCOUNT} className="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white">
-                            <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                            <span className="h-8 w-8 rounded-full overflow-hidden bg-gray-100">
+                                <ProfilePicWithDefault pictureURL={authUser.picture} />
+                            </span>
                         </Link>
                     </div>
                 </div>
