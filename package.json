@@ -21,7 +21,7 @@
     "gatsby-transformer-sharp": "^2.5.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-images-upload": "^1.2.8",
+    "react-image-crop": "^8.6.5",
     "recompose": "^0.30.0"
   },
   "devDependencies": {
