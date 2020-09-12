@@ -13,7 +13,7 @@ module.exports = {
       options: {
         credential: JSON.parse(JSON.stringify({
           type: "service_account",
-          project_id: "make-my-games",
+          project_id: process.env.GATSBY_PROJECT_ID,
           private_key_id: process.env.GATSBY_FIREBASE_PRIVATE_KEY_ID,
           private_key: process.env.GATSBY_FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n'),
           client_email: process.env.GATSBY_FIREBASE_CLIENT_EMAIL,
