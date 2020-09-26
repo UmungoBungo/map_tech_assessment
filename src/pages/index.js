@@ -11,7 +11,7 @@ const LandingPage = () => (
         <div className="relative site-background-color overflow-hidden">
             <div className="max-w-screen-xl mx-auto ">
 
-                <div className="mt-5 grid grid-cols-1 rounded-lg border overflow-hidden shadow lg:grid-cols-2">
+                <div className="mt-5 grid grid-cols-1 overflow-hidden lg:grid-cols-2">
                     <div>
                         <div className="relative z-10 pb-8 site-background-color sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
                             <div className="relative pt-6 px-4 sm:px-6 lg:px-8" />
@@ -44,7 +44,7 @@ const LandingPage = () => (
                             </div>
                         </div>
                     </div>
-                    <div className="px-4 lg:px-0 w-full h-map lg:h-full">
+                    <div className="px-4 lg:pr-8 lg:pl-0 w-full h-map lg:h-full">
                         <Map />
                     </div>
                 </div>
