@@ -1,7 +1,11 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      height: theme => ({
+        "map": "26rem"
+      }),
+    }
   },
   variants: {},
   plugins: [],
