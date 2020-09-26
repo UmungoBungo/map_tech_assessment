@@ -5,7 +5,7 @@ class Map extends Component {
 
   componentDidMount() {
     const googleMapScript = document.createElement('script')
-    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDfljkVL-EKMc_1-ltRz4wQrfSLSWGN87g`
+    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API_KEY}`
     window.document.body.appendChild(googleMapScript)
 
     googleMapScript.addEventListener('load', () => {
