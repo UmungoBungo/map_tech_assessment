@@ -1,8 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
-import Navigation from './Navigation';
 import getFirebase, { FirebaseContext } from './Firebase';
-import withAuthentication from './Session/withAuthentication';
 
 class Layout extends Component {
     state = {
@@ -11,13 +9,10 @@ class Layout extends Component {
 
     componentDidMount() {
         const app = import('firebase/app');
-        const auth = import('firebase/auth');
         const database = import('firebase/firestore');
-        const storage = import('firebase/storage');
 
-        Promise.all([app, auth, database]).then(values => {
+        Promise.all([app, database]).then(values => {
             const firebase = getFirebase(values[0]);
-
             this.setState({ firebase });
         });
     }
@@ -26,19 +21,11 @@ class Layout extends Component {
         return (
             <div className="min-h-screen site-background-color">
                 <FirebaseContext.Provider value={this.state.firebase}>
-                    <AppWithAuthentication {...this.props} />
+                    {this.props.children}
                 </FirebaseContext.Provider>
             </div>
         );
     }
 }
-
-const AppWithAuthentication = withAuthentication(({ children }) => (
-    <Fragment >
-        <Navigation />
-        <hr />
-        {children}
-    </Fragment>
-));
 
 export default Layout;
