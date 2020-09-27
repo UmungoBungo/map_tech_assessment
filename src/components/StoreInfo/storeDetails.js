@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import { withFirebase } from '../Firebase';
 
+const INITIAL_STATE = {
+    hours: '',
+    address: '',
+    validSelection: false
+};
+
+
 class StoreDetails extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            hours: '',
-            address: ''
-        }
+        this.state = { ...INITIAL_STATE };
         this.getSiteState = this.getSiteState.bind(this)
     }
 
     firebaseInit = () => {
-        if (this.props.firebase && !this._initFirebase) {
-            this._initFirebase = true;
+        if (this.props.firebase) {
 
-            this.getSiteState();
+            if (this.props.selectedId)
+                this.getSiteState()
+            else
+                this.setState({ ...INITIAL_STATE })
         }
     };
 
@@ -29,26 +35,28 @@ class StoreDetails extends Component {
 
     getSiteState = () => {
         this.props.firebase
-            .location("4FVF0EJ7immt4fN07LkX")
+            .location(this.props.selectedId)
             .get()
             .then(doc => {
                 if (doc.exists) {
                     const storeInfo = doc.data()
                     this.setState({
                         address: storeInfo.address,
-                        hours: storeInfo.hours
+                        hours: storeInfo.hours,
+                        validSelection: true
                     })
                 } else {
                     console.log("No such document!")
                 }
             }).catch(function (error) {
                 console.log("Error getting document:", error)
+                this.setState({ ...INITIAL_STATE })
             })
     };
 
     render() {
         return (
-            <div>
+            this.state.validSelection && <div>
                 <div className="font-normal">
                     ADDRESS:
                 </div>
@@ -59,7 +67,7 @@ class StoreDetails extends Component {
                     HOURS:
                 </div>
                 <div className="font-bold text-xl">
-                {this.state.hours}
+                    {this.state.hours}
                 </div>
             </div>
         );

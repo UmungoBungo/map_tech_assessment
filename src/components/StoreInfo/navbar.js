@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby'
 
 
-const NavBar = () => {
+const NavBar = (props) => {
     const [activeStoreId, setActiveStoreId] = useState(null);
 
     const onStoreChange = event => {
         setActiveStoreId(event.currentTarget.value)
+        props.onSelectStore(event.currentTarget.value)
     };
 
     const { allLocation } = useStaticQuery
