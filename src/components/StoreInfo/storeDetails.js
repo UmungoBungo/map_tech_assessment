@@ -16,7 +16,8 @@ class StoreDetails extends Component {
     }
 
     firebaseInit = () => {
-        if (this.props.firebase) {
+        if (this.props.firebase && !this._initFirebase) {
+            this._initFirebase = true
 
             if (this.props.selectedId)
                 this.getSiteState()
@@ -29,7 +30,10 @@ class StoreDetails extends Component {
         this.firebaseInit();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
+        if ((this.props.selectedId !== prevProps.selectedId) && this.props.selectedId) {
+            this.getSiteState()
+        }
         this.firebaseInit();
     }
 
