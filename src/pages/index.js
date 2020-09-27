@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Layout from '../components/layout';
 import { withFirebase } from '../components/Firebase';
 import StoreInfo from '../components/StoreInfo'
-
 import Map from '../components/GoogleMap/map'
 
 class LandingPage extends Component {

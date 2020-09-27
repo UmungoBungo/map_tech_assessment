@@ -1,47 +1,69 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 
-class Map extends Component {
-  googleMapRef = React.createRef()
+function Map(props) {
+  // refs
+  const googleMapRef = React.createRef();
+  const googleMap = useRef(null);
+  const marker = useRef(null);
 
-  componentDidMount() {
-    const googleMapScript = document.createElement('script')
-    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API_KEY}`
-    window.document.body.appendChild(googleMapScript)
-
-    googleMapScript.addEventListener('load', () => {
-      this.googleMap = this.createGoogleMap()
-      this.marker = this.createMarker()
-    })
-  }
-
-  createGoogleMap = () =>
-    new window.google.maps.Map(this.googleMapRef.current, {
-      zoom: 16,
-      center: {
-        lat: -31.889607,
-        lng: 116.010437
-      },
+  // helper functions
+  const createGoogleMap = () =>
+    new window.google.maps.Map(googleMapRef.current, {
+      LatLngBounds: [ { lat: -31.997434, lng: 115.762957 } , { lat: -31.889607, lng: 116.010437 } ],
+      // zoom: 16,
+      // center: {
+      //   lat: -31.889607,
+      //   lng: 116.010437
+      // },
       disableDefaultUI: true,
-    })
+    });
 
-  createMarker = () =>
+  const createMarker = (lat, long) =>
     new window.google.maps.Marker({
       position: {
-        lat: -31.889607,
-        lng: 116.010437
+        lat: lat,
+        lng: long 
       },
-      map: this.googleMap,
-    })
+      map: googleMap.current
+    });
 
-  render() {
-    return (
-      <div
-        id="google-map"
-        ref={this.googleMapRef}
-        className="h-full w-full"
-      />
-    )
-  }
+  // useEffect Hook
+  useEffect(() => {
+    const googleMapScript = document.createElement('script');
+    googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API_KEY}`
+    window.document.body.appendChild(googleMapScript);
+
+    googleMapScript.addEventListener('load', () => {
+      googleMap.current = createGoogleMap();
+      allLocation.edges.map(function (edge, i) {
+        marker.current = createMarker(edge.node.lat, edge.node.long)
+      })
+    })
+  });
+
+  const { allLocation } = useStaticQuery
+  (graphql`
+      query {
+          allLocation {
+              edges {
+                  node {
+                      lat,
+                      long
+                  }
+              }
+          }
+      }
+  `)
+
+  return (
+    <div
+      id="google-map"
+      ref={googleMapRef}
+      className="h-full w-full"
+    />
+  )
+
 }
 
 export default Map;
