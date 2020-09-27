@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import Layout from '../components/layout';
 import { withFirebase } from '../components/Firebase';
+import StoreInfo from '../components/StoreInfo'
 
 import Map from '../components/GoogleMap/map'
 
 class LandingPage extends Component {
     _initFirebase = false;
-  
+
     constructor(props) {
-      super(props);
-  
-      this.state = {
-        locations: []
-      };
+        super(props);
+
+        this.state = {
+            locations: []
+        };
     }
 
     firebaseInit = () => {
@@ -56,41 +57,23 @@ class LandingPage extends Component {
         return (
             <Layout>
                 <div className="relative site-background-color overflow-hidden">
-                    <div className="max-w-screen-xl mx-auto ">
+                    <div className="max-w-screen-xl mx-auto">
+                        <div className="flex justify-center">
+                            <h2 className="text-6xl leading-none tracking-tight font-extrabold text-gray-900 uppercase">
+                                Store{" "}
+                                <span className="text-orange-600">
+                                    Locator
+                            </span>
+                            </h2>
+                        </div>
+
 
                         <div className="mt-5 grid grid-cols-1 overflow-hidden lg:grid-cols-2">
-                            <div>
-                                <div className="relative z-10 pb-8 site-background-color sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                                    <div className="relative pt-6 px-4 sm:px-6 lg:px-8" />
+                            <div className="relative z-10 pb-8 site-background-color sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                                <div className="relative pt-6 px-4 sm:px-6 lg:px-8" />
 
-                                    <div className="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                                        <div className="sm:text-center lg:text-left">
-                                            <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl uppercase">
-                                                Store{" "}
-                                                <br className="xl:hidden" />
-                                                <span className="text-indigo-600">
-                                                    Locator
-                                            </span>
-                                            </h2>
-                                            <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                                                Select your nearest store from the map
-                                            </p>
-                                            <div className="mt-5 sm:mt-8 sm:justify-center lg:justify-start">
-                                                <div className="rounded-md shadow">
-                                                    Midland
-                                                </div>
-                                                <div className="rounded-md shadow">
-                                                    Burswood
-                                                </div>
-                                                <div className="rounded-md shadow">
-                                                    Claremont
-                                                </div>
-                                                <div className="rounded-md shadow">
-                                                    Cottesloe
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div className=" mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+                                    <StoreInfo />
                                 </div>
                             </div>
                             <div className="px-4 lg:pr-8 lg:pl-0 w-full h-map lg:h-full">
