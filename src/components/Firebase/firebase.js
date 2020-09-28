@@ -21,6 +21,12 @@ class Firebase {
 
   }
 
+  // *** Users API ***
+
+  user = uid => this.db.doc(`users/${uid}`);
+
+  users = () => this.db.collection('users');
+
   // *** Locations API ***
 
   location = uid => this.db.doc(`locations/${uid}`);
