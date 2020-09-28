@@ -47,6 +47,7 @@ class StoreDetails extends Component {
                     this.setState({
                         address: storeInfo.address,
                         hours: storeInfo.hours,
+                        days: storeInfo.days,
                         validSelection: true
                     })
                 } else {
@@ -72,6 +73,12 @@ class StoreDetails extends Component {
                 </div>
                 <div className="font-bold text-xl">
                     {this.state.hours}
+                </div>
+                <div className="font-normal mt-4">
+                    DAYS:
+                </div>
+                <div className="font-bold text-xl">
+                    {this.state.days}
                 </div>
             </div>
         );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql, useStaticQuery } from 'gatsby'
 
 
@@ -25,8 +25,15 @@ const NavBar = (props) => {
             }
         `)
 
+    useEffect(() => {
+        if (props.selectedId) {
+            setActiveStoreId(props.selectedId)
+        }
+
+    }, [props.selectedId]);
+
     return (
-        <div className="flex justify-between items-center py-3 md:justify-start">
+        <div className="flex justify-between items-center pb-3 md:justify-start">
             <div className="flex-1 flex items-center justify-between space-x-12">
                 <nav className="grid gap-2 sm:gap-4 grid-cols-1 sm:grid-cols-4 justify-items-center">
                     {

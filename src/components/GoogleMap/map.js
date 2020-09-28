@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 function Map(props) {
   const [markersArray, setMarkersArray] = useState([]);
+  const [openInfoWindow, setOpenInfoWindow] = useState(null);
   // refs
   const googleMapRef = React.createRef();
   const googleMap = useRef(null);
@@ -28,6 +29,8 @@ function Map(props) {
         googleMap.current.panTo(coordinates)
         googleMap.current.setZoom(16)
         infowindow.open(googleMap.current, marker)
+        props.onSelectStore(marker.id)
+        setOpenInfoWindow(infowindow)
       })
       markerArray.push(marker)
       bounds.extend(coordinates)
@@ -50,6 +53,7 @@ function Map(props) {
   useEffect(() => {
     if (props.selectedId) {
       const locationMarker = markersArray.filter((edge) => { return edge.id === props.selectedId })
+      openInfoWindow && openInfoWindow.close()
       new window.google.maps.event.trigger( locationMarker[0], 'click' )
     }
     

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from './navbar'
 import StoreDetails from './storeDetails'
 
@@ -10,13 +10,17 @@ const StoreInfo = (props) => {
         props.onSelectStore(storeID)
     }
 
+    useEffect(() => {
+      if (props.selectedId) {
+        setActiveStoreId(props.selectedId)
+      }
+      
+    }, [props.selectedId]);
+
     return (
         <div className="text-left min-h-full">
-            <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl mx-0">
-                Store locations
-            </p>
             <div className="relative site-background-color">
-                <NavBar onSelectStore={handleStoreSelect} />
+                <NavBar selectedId={activeStoreId} onSelectStore={handleStoreSelect} />
             </div>
             <div className="mt-2 sm:justify-center lg:justify-start">
                 <StoreDetails selectedId={activeStoreId} />
