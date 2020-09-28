@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import NavBar from './navbar'
 import StoreDetails from './storeDetails'
 
-const StoreInfo = () => {
+const StoreInfo = (props) => {
     const [activeStoreId, setActiveStoreId] = useState(null);
 
     const handleStoreSelect = (storeID) => {
         setActiveStoreId(storeID)
+        props.onSelectStore(storeID)
     }
 
     return (

@@ -47,9 +47,18 @@ class LandingPage extends Component {
                         loading: false,
                     });
                 } else {
-                    this.setState({ locations: null, loading: false });
+                    this.setState({
+                        locations: null,
+                        loading: false
+                    });
                 }
             });
+    }
+
+    handleStoreSelect = (storeID) => {
+        this.setState({
+            activeStoreId: storeID,
+        })
     }
 
     render() {
@@ -72,11 +81,11 @@ class LandingPage extends Component {
                                 <div className="relative pt-6 px-4 sm:px-6 lg:px-8" />
 
                                 <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:h-56">
-                                    <StoreInfo />
+                                    <StoreInfo onSelectStore={this.handleStoreSelect} />
                                 </div>
                             </div>
                             <div className="px-4 lg:pr-8 lg:pl-0 w-full h-map lg:h-full">
-                                <Map />
+                                <Map selectedId={this.state.activeStoreId} />
                             </div>
                         </div>
                     </div>
