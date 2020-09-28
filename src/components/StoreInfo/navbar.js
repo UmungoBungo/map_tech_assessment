@@ -30,8 +30,8 @@ const NavBar = (props) => {
             <div className="flex-1 flex items-center justify-between space-x-12">
                 <nav className="grid gap-2 sm:gap-4 grid-cols-1 sm:grid-cols-4 justify-items-center">
                     {
-                        allLocation.edges.map(function (edge, i) {
-                            const activeColor = activeStoreId == edge.node.id ? "border-orange-500 text-orange-700 focus:border-orange-700" : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300"
+                        allLocation.edges.map(function (edge) {
+                            const activeColor = activeStoreId === edge.node.id ? "border-orange-500 text-orange-700 focus:border-orange-700" : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300"
                             return (
                                 <button
                                     type="button"

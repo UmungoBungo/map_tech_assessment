@@ -5,28 +5,40 @@ function Map(props) {
   // refs
   const googleMapRef = React.createRef();
   const googleMap = useRef(null);
-  const marker = useRef(null);
 
   // helper functions
   const createGoogleMap = () =>
     new window.google.maps.Map(googleMapRef.current, {
-      LatLngBounds: [ { lat: -31.997434, lng: 115.762957 } , { lat: -31.889607, lng: 116.010437 } ],
-      // zoom: 16,
-      // center: {
-      //   lat: -31.889607,
-      //   lng: 116.010437
-      // },
+      // LatLngBounds: [(-31.997434, 115.762957), (-31.889607, 116.010437)],
+      zoom: 16,
+      center: {
+        lat: -31.889607,
+        lng: 116.010437
+      },
       disableDefaultUI: true,
     });
 
-  const createMarker = (lat, long) =>
-    new window.google.maps.Marker({
-      position: {
-        lat: lat,
-        lng: long 
-      },
-      map: googleMap.current
-    });
+  const setMarkers = () => {
+    var bounds = new window.google.maps.LatLngBounds();
+    allLocation.edges.forEach( (edge) => {
+      const coordinates = new window.google.maps.LatLng(edge.node.lat, edge.node.long)
+      const infowindow = new window.google.maps.InfoWindow({
+        content: `${edge.node.name} Store`,
+      });
+      const marker = new window.google.maps.Marker({
+        position: coordinates,
+        map: googleMap.current
+      })
+      marker.addListener("click", () => {
+        googleMap.current.panTo(coordinates)
+        googleMap.current.setZoom(16)
+        infowindow.open(googleMap.current, marker)
+      })
+      bounds.extend(coordinates)
+    })
+    googleMap.current.fitBounds(bounds)
+  }
+
 
   // useEffect Hook
   useEffect(() => {
@@ -35,21 +47,20 @@ function Map(props) {
     window.document.body.appendChild(googleMapScript);
 
     googleMapScript.addEventListener('load', () => {
-      googleMap.current = createGoogleMap();
-      allLocation.edges.map(function (edge, i) {
-        marker.current = createMarker(edge.node.lat, edge.node.long)
-      })
+      googleMap.current = createGoogleMap()
+      setMarkers()
     })
   });
 
   const { allLocation } = useStaticQuery
-  (graphql`
+    (graphql`
       query {
           allLocation {
               edges {
                   node {
                       lat,
-                      long
+                      long,
+                      name
                   }
               }
           }
