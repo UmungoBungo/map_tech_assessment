@@ -18,11 +18,11 @@ const StoreInfo = (props) => {
     }, [props.selectedId]);
 
     return (
-        <div className="text-left min-h-full">
-            <div className="relative site-background-color">
+        <div className='text-left min-h-full'>
+            <div className='relative site-background-color'>
                 <NavBar selectedId={activeStoreId} onSelectStore={handleStoreSelect} />
             </div>
-            <div className="mt-2 sm:justify-center lg:justify-start">
+            <div className='mt-2 sm:justify-center lg:justify-start'>
                 <StoreDetails selectedId={activeStoreId} />
             </div>
         </div>

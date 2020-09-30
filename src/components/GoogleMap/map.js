@@ -25,7 +25,7 @@ function Map(props) {
         map: googleMap.current,
         id: edge.node.id
       })
-      marker.addListener("click", () => {
+      marker.addListener('click', () => {
         googleMap.current.panTo(coordinates)
         googleMap.current.setZoom(16)
         infowindow.open(googleMap.current, marker)
@@ -77,9 +77,9 @@ function Map(props) {
 
   return (
     <div
-      id="google-map"
+      id='google-map'
       ref={googleMapRef}
-      className="h-full w-full"
+      className='h-full w-full'
     />
   )
 

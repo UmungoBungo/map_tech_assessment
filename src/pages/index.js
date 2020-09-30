@@ -64,25 +64,25 @@ class LandingPage extends Component {
     render() {
         return (
             <Layout>
-                <div className="relative site-background-color overflow-hidden">
-                    <div className="max-w-screen-xl mx-auto">
-                        <div className="flex justify-center">
-                            <h2 className="text-4xl leading-none tracking-tight font-extrabold text-gray-900 uppercase sm:text-5xl sm:leading-none md:text-6xl">
-                                Store{" "}
-                                <span className="text-orange-600">
+                <div className='relative site-background-color overflow-hidden'>
+                    <div className='max-w-screen-xl mx-auto'>
+                        <div className='flex justify-center'>
+                            <h2 className='text-4xl leading-none tracking-tight font-extrabold text-gray-900 uppercase sm:text-5xl sm:leading-none md:text-6xl'>
+                                Store{' '}
+                                <span className='text-orange-600'>
                                     Locator
                             </span>
                             </h2>
                         </div>
 
 
-                        <div className="mt-5 grid grid-cols-1 overflow-hidden lg:grid-cols-2">
-                            <div className="relative z-10 pb-8 site-background-color sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                                <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:h-56">
+                        <div className='mt-5 grid grid-cols-1 overflow-hidden lg:grid-cols-2'>
+                            <div className='relative z-10 pb-8 site-background-color sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
+                                <div className='mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:h-56'>
                                     <StoreInfo selectedId={this.state.activeStoreId} onSelectStore={this.handleStoreSelect} />
                                 </div>
                             </div>
-                            <div className="px-4 lg:pr-8 lg:pl-0 w-full h-map lg:h-full">
+                            <div className='px-4 lg:pr-8 lg:pl-0 w-full h-map lg:h-full'>
                                 <Map selectedId={this.state.activeStoreId} onSelectStore={this.handleStoreSelect} />
                             </div>
                         </div>
