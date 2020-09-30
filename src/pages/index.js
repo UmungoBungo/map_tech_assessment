@@ -67,7 +67,7 @@ class LandingPage extends Component {
                 <div className="relative site-background-color overflow-hidden">
                     <div className="max-w-screen-xl mx-auto">
                         <div className="flex justify-center">
-                            <h2 className="text-6xl leading-none tracking-tight font-extrabold text-gray-900 uppercase">
+                            <h2 className="text-4xl leading-none tracking-tight font-extrabold text-gray-900 uppercase sm:text-5xl sm:leading-none md:text-6xl">
                                 Store{" "}
                                 <span className="text-orange-600">
                                     Locator

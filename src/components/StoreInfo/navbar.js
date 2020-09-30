@@ -13,8 +13,10 @@ const NavBar = (props) => {
     }
 
     const onStoreChange = event => {
-        const storeId = event.currentTarget.value
+        const storeId = event.currentTarget.id
+        const storeName = event.currentTarget.name
         setActiveStoreId(storeId)
+        setActiveStoreName(storeName)
         props.onSelectStore(storeId)
         setMobMenuOpen(false)
     };
@@ -40,30 +42,38 @@ const NavBar = (props) => {
 
     }, [props.selectedId]);
 
+    function StoreList() {
+        return allLocation.edges.map(function (edge) {
+            const activeColor = activeStoreId === edge.node.id ? "border-orange-500 text-orange-700 focus:border-orange-700" : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300"
+            return (
+                <button
+                    type="button"
+                    onClick={onStoreChange}
+                    name={edge.node.name}
+                    id={edge.node.id}
+                    key={edge.node.id}
+                    className={`${activeColor} inline-flex justify-center px-1 py-1 sm:pb-0 rounded-md sm:rounded-none sm:border-0 sm:border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out`}>
+                    {edge.node.name}
+                </button>
+            )
+        })
+    }
+
     return (
         <div className="flex justify-between items-center pb-3 md:justify-start">
             <div className="flex-1 flex items-center justify-between">
                 <nav className="hidden sm:flex sm:gap-4 sm:grid-cols-4 justify-items-center">
-                    {
-                        allLocation.edges.map(function (edge) {
-                            const activeColor = activeStoreId === edge.node.id ? "border-orange-500 text-orange-700 focus:border-orange-700" : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300"
-                            return (
-                                <button
-                                    type="button"
-                                    onClick={onStoreChange}
-                                    value={edge.node.id}
-                                    key={edge.node.id}
-                                    className={`${activeColor} inline-flex justify-center px-1 py-1 sm:pb-0 border-2 rounded-md sm:rounded-none sm:border-0 sm:border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out`}>
-                                    {edge.node.name}
-                                </button>
-                            )
-                        })
-                    }
+                    <StoreList />
                 </nav>
-                <button type="button" onClick={toggleMobMenu} className="border-2 border-solid px-2 flex rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-600 transition duration-150 ease-in-out sm:hidden">
-                    {activeStoreName || 'Select Store'}
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                <button type="button" onClick={toggleMobMenu} className="border-2 border-solid px-2 flex rounded-md hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out sm:hidden">
+                    {activeStoreName && <span className="text-orange-600 hover:text-orange-700 focus:text-orange-700">
+                        {activeStoreName}
+                    </span>}
+                    {!activeStoreName && <span className="text-gray-500 hover:text-gray-600 focus:text-gray-600">
+                        Select Store
+                    </span>}
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                 </button>
             </div>
@@ -79,35 +89,17 @@ const NavBar = (props) => {
                 {(ref) => (
                     <div ref={ref} className="absolute top-0 left-0 min-w-1/4 transition transform origin-top-left sm:hidden">
                         <div className="rounded-lg shadow-lg bg-gray-200 divide-y-2 divide-gray-600 border-solid border-2 border-gray-600">
-                            <div className="pt-5 pb-6 px-5 space-y-6">
-                                <div>
-                                    <nav className="grid gap-6">
-                                        <span className="w-full flex flex-col">
-                                            {allLocation.edges.map(function (edge, i) {
-                                                const activeColor = activeStoreId === edge.node.id ? "text-orange-800" : "border-transparent text-gray-600 hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300"
-                                                return (
-                                                    <div className="flex">
-                                                        <button
-                                                            type="button"
-                                                            onClick={onStoreChange}
-                                                            value={edge.node.id}
-                                                            key={edge.node.id}
-                                                            className={`${activeColor} inline-flex justify-center px-1 py-1 sm:pb-0 rounded-md sm:rounded-none sm:border-0 sm:border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out`}>
-                                                            {edge.node.name}
-                                                        </button>
-                                                        {i === 0 && <div className="-mr-2">
-                                                            <button type="button" onClick={toggleMobMenu} className="absolute inline-flex items-center justify-center pl-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                                                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                                                </svg>
-                                                            </button>
-                                                        </div>}
-                                                    </div>
-                                                )
-                                            })}
-                                        </span>
-                                    </nav>
-                                </div>
+                            <div className="flex pt-5 pb-6 px-5">
+                                <nav className="grid gap-6">
+                                    <span className="w-full flex flex-col">
+                                        <StoreList />
+                                    </span>
+                                </nav>
+                                <button type="button" onClick={toggleMobMenu} className="flex" >
+                                    <svg className="w-6 h-6 mt-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
