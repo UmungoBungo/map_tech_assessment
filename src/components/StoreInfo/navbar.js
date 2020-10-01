@@ -37,7 +37,9 @@ const NavBar = (props) => {
 
     useEffect(() => {
         if (props.selectedId) {
+            const storeName = allLocation.edges.filter((edge) => { return edge.node.id === props.selectedId })[0].node.name
             setActiveStoreId(props.selectedId)
+            setActiveStoreName(storeName)
         }
 
     }, [props.selectedId]);
@@ -52,7 +54,7 @@ const NavBar = (props) => {
                     name={edge.node.name}
                     id={edge.node.id}
                     key={edge.node.id}
-                    className={`${activeColor} inline-flex justify-center px-1 pt-1 pb-0 border-0 border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out`}>
+                    className={`${activeColor} inline-flex sm:justify-center px-1 pt-1 pb-0 border-0 border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out`}>
                     {edge.node.name}
                 </button>
             )
@@ -92,13 +94,13 @@ const NavBar = (props) => {
                 {(ref) => (
                     <div ref={ref} className='absolute top-0 left-0 min-w-1/4 transition transform origin-top-left sm:hidden'>
                         <div className='rounded-lg shadow-lg bg-gray-200 divide-y-2 divide-gray-600 border-solid border-2 border-gray-600'>
-                            <div className='flex pt-5 pb-6 px-5'>
+                            <div className='flex py-3 px-5'>
                                 <nav className='grid gap-6'>
                                     <span className='w-full flex flex-col'>
                                         <StoreList />
                                     </span>
                                 </nav>
-                                <button type='button' onClick={toggleMobMenu} className='flex' >
+                                <button type='button' onClick={toggleMobMenu} className='flex absolute mt-1 mr-1 top-0 right-0'>
                                     <svg className='w-6 h-6 mt-0' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
                                         <path fill-rule='evenodd' d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z' clip-rule='evenodd' />
                                     </svg>
