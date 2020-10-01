@@ -16,7 +16,7 @@ function Map(props) {
     const bounds = new window.google.maps.LatLngBounds();
     const markerArray = []
     allLocation.edges.forEach((edge) => {
-      const coordinates = new window.google.maps.LatLng(edge.node.lat, edge.node.long)
+      const coordinates = new window.google.maps.LatLng(edge.node.lat, edge.node.lng)
       distanceFromPerth(coordinates).then((distance) => {
         const infowindow = new window.google.maps.InfoWindow({
           content: `<div class='font-bold text-base mb-2 text-orange-700'>${edge.node.name} Store.</div><div class='font-bold text-sm mb-2 text-gray-700'> ${distance} from Perth CBD.</div>`,
@@ -30,7 +30,7 @@ function Map(props) {
           googleMap.current.panTo(coordinates)
           googleMap.current.setZoom(16)
           infowindow.open(googleMap.current, marker)
-          props.onSelectStore(marker.id)
+          props.onMapSelectStore(marker.id)
           setOpenInfoWindow(infowindow)
         })
         markerArray.push(marker)
@@ -69,7 +69,7 @@ function Map(props) {
               edges {
                   node {
                       lat,
-                      long,
+                      lng,
                       name,
                       id
                   }
@@ -91,7 +91,7 @@ function Map(props) {
     })
 
     const result = await calcDistance(
-      new window.google.maps.DistanceMatrixService,
+      new window.google.maps.DistanceMatrixService(),
       {
         origins: ['CBD, Western Australia'],
         destinations: [coordinates],

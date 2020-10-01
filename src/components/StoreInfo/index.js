@@ -5,9 +5,9 @@ import StoreDetails from './storeDetails'
 const StoreInfo = (props) => {
     const [activeStoreId, setActiveStoreId] = useState(null);
 
-    const handleStoreSelect = (storeID) => {
-        setActiveStoreId(storeID)
-        props.onSelectStore(storeID)
+    const handleStoreSelect = (storeId) => {
+        setActiveStoreId(storeId)
+        props.onInfoSelectStore(storeId)
     }
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const StoreInfo = (props) => {
     return (
         <div className='text-left min-h-full'>
             <div className='relative site-background-color'>
-                <NavBar selectedId={activeStoreId} onSelectStore={handleStoreSelect} />
+                <NavBar selectedId={activeStoreId} onInfoSelectStore={handleStoreSelect} />
             </div>
             <div className='mt-2 sm:justify-center lg:justify-start'>
                 <StoreDetails selectedId={activeStoreId} />

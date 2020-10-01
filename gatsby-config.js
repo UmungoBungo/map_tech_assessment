@@ -7,8 +7,6 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    { resolve: `gatsby-plugin-build-date`, options: { formatAsDateString: false }},
-    { resolve: `gatsby-source-filesystem`, options: { path: `./src/data/` } },
     { resolve: 'gatsby-source-firestore',
       options: {
         credential: JSON.parse(JSON.stringify({
@@ -30,7 +28,7 @@ module.exports = {
             map: doc => ({
               name: doc.name,
               lat: doc.lat,
-              long: doc.long
+              lng: doc.lng
             }),
           }
         ],
