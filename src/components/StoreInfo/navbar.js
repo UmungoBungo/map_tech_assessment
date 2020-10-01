@@ -17,7 +17,7 @@ const NavBar = (props) => {
         const storeName = event.currentTarget.name
         setActiveStoreId(storeId)
         setActiveStoreName(storeName)
-        props.onSelectStore(storeId)
+        props.onInfoSelectStore(storeId)
         setMobMenuOpen(false)
     };
 
