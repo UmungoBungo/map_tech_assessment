@@ -3,11 +3,11 @@ const config = {
   authDomain: process.env.GATSBY_AUTH_DOMAIN,
   databaseURL: process.env.GATSBY_DATABASE_URL,
   projectId: process.env.GATSBY_PROJECT_ID
-};
+}
 
 class Firebase {
   constructor(app) {
-    app.initializeApp(config);
+    app.initializeApp(config)
 
     /* Firebase APIs */
 
@@ -17,25 +17,25 @@ class Firebase {
 
   // *** Users API ***
 
-  user = uid => this.db.doc(`users/${uid}`);
+  user = uid => this.db.doc(`users/${uid}`)
 
-  users = () => this.db.collection('users');
+  users = () => this.db.collection('users')
 
   // *** Locations API ***
 
-  location = uid => this.db.doc(`locations/${uid}`);
+  location = uid => this.db.doc(`locations/${uid}`)
 
-  locations = () => this.db.collection('locations');
+  locations = () => this.db.collection('locations')
 }
 
-let firebase;
+let firebase
 
 function getFirebase(app, database) {
   if (!firebase) {
-    firebase = new Firebase(app, database);
+    firebase = new Firebase(app, database)
   }
 
-  return firebase;
+  return firebase
 }
 
-export default getFirebase;
+export default getFirebase

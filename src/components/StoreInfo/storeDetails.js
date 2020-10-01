@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { withFirebase } from '../Firebase';
+import React, { Component } from 'react'
+import { withFirebase } from '../Firebase'
 
 const INITIAL_STATE = {
     hours: '',
     address: '',
     validSelection: false,
     UID: '7tGnutvf3BtbiZuRPk38'
-};
+}
 
 
 class StoreDetails extends Component {
     constructor(props) {
         super(props)
-        this.state = { ...INITIAL_STATE };
+        this.state = { ...INITIAL_STATE }
         this.getSiteState = this.getSiteState.bind(this)
     }
 
@@ -27,17 +27,17 @@ class StoreDetails extends Component {
             else
                 this.setState({ ...INITIAL_STATE })
         }
-    };
+    }
 
     componentDidMount() {
-        this.firebaseInit();
+        this.firebaseInit()
     }
 
     componentDidUpdate(prevProps) {
         if ((this.props.selectedId !== prevProps.selectedId) && this.props.selectedId) {
             this.getSiteState()
         }
-        this.firebaseInit();
+        this.firebaseInit()
     }
 
     getStorePreference = () => {
@@ -55,7 +55,7 @@ class StoreDetails extends Component {
             }).catch(function (error) {
                 console.log('Error getting document:', error)
             })
-    };
+    }
 
     onStorePrefChange = event => {
         this.props.firebase
@@ -66,7 +66,7 @@ class StoreDetails extends Component {
             .catch(function (error) {
                 console.log('Error updating document:', error)
             })
-    };
+    }
 
     getSiteState = () => {
         this.props.firebase
@@ -89,7 +89,7 @@ class StoreDetails extends Component {
                 console.log('Error getting document:', error)
                 this.setState({ ...INITIAL_STATE })
             })
-    };
+    }
 
     render() {
         return (
@@ -130,9 +130,9 @@ class StoreDetails extends Component {
                     </button>
                 </div>}
             </div>
-        );
+        )
     }
 }
 
-export default withFirebase(StoreDetails);
+export default withFirebase(StoreDetails)
 

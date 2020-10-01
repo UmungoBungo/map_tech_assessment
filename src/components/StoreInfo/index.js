@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import NavBar from './navbar'
 import StoreDetails from './storeDetails'
 
 const StoreInfo = (props) => {
-    const [activeStoreId, setActiveStoreId] = useState(null);
+    const [activeStoreId, setActiveStoreId] = useState(null)
 
     const handleStoreSelect = (storeId) => {
         setActiveStoreId(storeId)
@@ -15,7 +15,7 @@ const StoreInfo = (props) => {
         setActiveStoreId(props.selectedId)
       }
       
-    }, [props.selectedId]);
+    }, [props.selectedId])
 
     return (
         <div className='text-left min-h-full'>

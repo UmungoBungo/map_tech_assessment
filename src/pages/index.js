@@ -1,34 +1,34 @@
-import React, { Component } from 'react';
-import Layout from '../components/layout';
-import { withFirebase } from '../components/Firebase';
+import React, { Component } from 'react'
+import Layout from '../components/layout'
+import { withFirebase } from '../components/Firebase'
 import StoreInfo from '../components/StoreInfo'
 import Map from '../components/GoogleMap/map'
 
 class LandingPage extends Component {
-    _initFirebase = false;
+    _initFirebase = false
 
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
-            locations: []
-        };
+            locations: [],
+            activeStoreId: null
+        }
     }
 
     firebaseInit = () => {
         if (this.props.firebase && !this._initFirebase) {
-            this._initFirebase = true;
-
-            this.onRetrieveLocations();
+            this._initFirebase = true
+            this.onRetrieveLocations()
         }
-    };
+    }
 
     componentDidMount() {
-        this.firebaseInit();
+        this.firebaseInit()
     }
 
     componentDidUpdate() {
-        this.firebaseInit();
+        this.firebaseInit()
     }
 
 
@@ -37,22 +37,22 @@ class LandingPage extends Component {
             .locations()
             .onSnapshot(snapshot => {
                 if (snapshot.size) {
-                    let locations = [];
+                    let locations = []
                     snapshot.forEach(doc =>
                         locations.push({ ...doc.data(), uid: doc.id }),
-                    );
+                    )
 
                     this.setState({
                         locations: locations,
                         loading: false,
-                    });
+                    })
                 } else {
                     this.setState({
                         locations: null,
                         loading: false
-                    });
+                    })
                 }
-            });
+            })
     }
 
     handleStoreSelect = (storeId) => {
@@ -71,10 +71,9 @@ class LandingPage extends Component {
                                 Store{' '}
                                 <span className='text-orange-600'>
                                     Locator
-                            </span>
+                                </span>
                             </h2>
                         </div>
-
 
                         <div className='mt-5 grid grid-cols-1 overflow-hidden lg:grid-cols-2'>
                             <div className='relative z-10 pb-8 site-background-color sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32'>
@@ -93,4 +92,4 @@ class LandingPage extends Component {
     }
 }
 
-export default withFirebase(LandingPage);
+export default withFirebase(LandingPage)

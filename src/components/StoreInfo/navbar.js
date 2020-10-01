@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Transition } from '@tailwindui/react'
 
 
 const NavBar = (props) => {
-    const [activeStoreId, setActiveStoreId] = useState(null);
-    const [activeStoreName, setActiveStoreName] = useState(null);
-    const [mobMenuOpen, setMobMenuOpen] = useState(false);
+    const [activeStoreId, setActiveStoreId] = useState(null)
+    const [activeStoreName, setActiveStoreName] = useState(null)
+    const [mobMenuOpen, setMobMenuOpen] = useState(false)
 
     const toggleMobMenu = () => {
         setMobMenuOpen(!mobMenuOpen)
@@ -19,7 +19,7 @@ const NavBar = (props) => {
         setActiveStoreName(storeName)
         props.onInfoSelectStore(storeId)
         setMobMenuOpen(false)
-    };
+    }
 
     const { allLocation } = useStaticQuery
         (graphql`
@@ -42,7 +42,7 @@ const NavBar = (props) => {
             setActiveStoreName(storeName)
         }
 
-    }, [props.selectedId]);
+    }, [props.selectedId])
 
     function StoreList() {
         return allLocation.edges.map(function (edge) {
@@ -111,7 +111,7 @@ const NavBar = (props) => {
                 )}
             </Transition>
         </div>
-    );
-};
+    )
+}
 
-export default NavBar;
+export default NavBar

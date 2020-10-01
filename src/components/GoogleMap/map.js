@@ -2,25 +2,25 @@ import React, { useEffect, useRef, useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 function Map(props) {
-  const [markersArray, setMarkersArray] = useState([]);
-  const [openInfoWindow, setOpenInfoWindow] = useState(null);
+  const [markersArray, setMarkersArray] = useState([])
+  const [openInfoWindow, setOpenInfoWindow] = useState(null)
   // refs
-  const googleMapRef = React.createRef();
-  const googleMap = useRef(null);
+  const googleMapRef = React.createRef()
+  const googleMap = useRef(null)
 
   // helper functions
   const createGoogleMap = () =>
-    new window.google.maps.Map(googleMapRef.current, { disableDefaultUI: true });
+    new window.google.maps.Map(googleMapRef.current, { disableDefaultUI: true })
 
   const createMarkers = () => {
-    const bounds = new window.google.maps.LatLngBounds();
+    const bounds = new window.google.maps.LatLngBounds()
     const markerArray = []
     allLocation.edges.forEach((edge) => {
       const coordinates = new window.google.maps.LatLng(edge.node.lat, edge.node.lng)
       distanceFromPerth(coordinates).then((distance) => {
         const infowindow = new window.google.maps.InfoWindow({
           content: `<div class='font-bold text-base mb-2 text-orange-700'>${edge.node.name} Store.</div><div class='font-bold text-sm mb-2 text-gray-700'> ${distance} from Perth CBD.</div>`,
-        });
+        })
         const marker = new window.google.maps.Marker({
           position: coordinates,
           map: googleMap.current,
@@ -43,15 +43,15 @@ function Map(props) {
   }
 
   useEffect(() => {
-    const googleMapScript = document.createElement('script');
+    const googleMapScript = document.createElement('script')
     googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_API_KEY}`
-    window.document.body.appendChild(googleMapScript);
+    window.document.body.appendChild(googleMapScript)
 
     googleMapScript.addEventListener('load', () => {
       googleMap.current = createGoogleMap()
       createMarkers()
     })
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (props.selectedId) {
@@ -60,7 +60,7 @@ function Map(props) {
       new window.google.maps.event.trigger(locationMarker[0], 'click')
     }
 
-  }, [props.selectedId]);
+  }, [props.selectedId])
 
   const { allLocation } = useStaticQuery
     (graphql`
@@ -85,7 +85,7 @@ function Map(props) {
         if (status === 'OK') {
           resolve(response.rows[0].elements[0].distance.text)
         } else {
-          reject('Error was: ' + status);
+          reject('Error was: ' + status)
         }
       })
     })
@@ -113,4 +113,4 @@ function Map(props) {
 
 }
 
-export default Map;
+export default Map
